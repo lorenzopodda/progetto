@@ -27,7 +27,7 @@ if (!$vd->isJson()) {
             <base href="<?= Settings::getApplicationPath() ?>php/"/>
             <meta name="keywords" content="AMM esami docente" />
             <meta name="description" content="Una pagina per gestire le funzioni dei docenti" />
-            <link href="../css/stile_benvenuto.css" rel="stylesheet" type="text/css" media="screen" />
+            <link href="../css/stile.css" rel="stylesheet" type="text/css" media="screen" />
             <?php
             foreach ($vd->getScripts() as $script) {
                 ?>

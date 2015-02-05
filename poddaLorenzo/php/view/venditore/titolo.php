@@ -1,3 +1,3 @@
 
-	<h1>sezione amministratore</h1>
+	<h1>sezione venditore</h1>
 

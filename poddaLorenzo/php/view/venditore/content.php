@@ -1,7 +1,7 @@
 <?php
 switch ($vd->getSottoPagina()) {
-    case 'amministratore':
-        include_once 'amministratore.php.php';
+    case 'venditore':
+        include_once 'venditore.php';
         break;
 
     case 'inserisci':
@@ -11,11 +11,10 @@ switch ($vd->getSottoPagina()) {
     case 'cancella':
         include_once 'cancella.php';
         break;
-    case 'ordini':
-        include_once 'ordini.php';
-        break;
+    
     default:
         
-        ?>	
+}     
+?>	
 	   
 

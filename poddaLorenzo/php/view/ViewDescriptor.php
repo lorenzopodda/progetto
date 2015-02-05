@@ -21,11 +21,6 @@ class ViewDescriptor {
      */
     private $titolo;
 
-    /**
-     * File che include la definizione HTML del logo (parte dello header)
-     * @var string 
-     */
-    private $header_file;
 
     /**
      * File che include la definizione HTML dei tab della pagina (parte dello header)
@@ -100,21 +95,7 @@ class ViewDescriptor {
         $this->titolo = $titolo;
     }
 
-    /**
-     * Imposta il file che include la definizione HTML del logo (parte dello header)
-     * @param $logoFile il path al file contentente il logo
-     */
-    public function setHeaderFile($headerFile) {
-        $this->header_file = $headerFile;
-    }
-
-    /**
-     * Restituisce il path al file include la definizione HTML del logo (parte dello header)
-     * @return string
-     */
-    public function getHeaderFile() {
-        return $this->header_file;
-    }
+    
 
  /**
      * Imposta il file che include la definizione HTML del contenuto principale

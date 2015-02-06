@@ -21,11 +21,15 @@ class ViewDescriptor {
      */
     private $titolo;
     
+    /**
+     * File che include la definizione HTML dei tab della pagina (parte dello header)
+     * @var string 
+     */
     private $titolo_file;
 
 
     /**
-     * File che include la definizione HTML dei tab della pagina (parte dello header)
+     * File che include la definizione HTML dei tab della pagina (parte principale)
      * @var string 
      */
  
@@ -45,16 +49,16 @@ class ViewDescriptor {
     
     /**
      * Pagina della vista corrente 
-     * (le funzionalita' sono divise in tre categorie: 
-     * amministratore, studente e docente, corrispondenti alle sottocartelle 
+     * (le funzionalita' sono divise in due categorie: 
+     * utente e venditore, corrispondenti alle sottocartelle 
      * di view nel progetto)
      * @var string 
      */
     private $pagina;
     /**
      * Sottopagina della vista corrente (una per funzionalita' da supportare)
-     * (le funzionalita' sono divise in tre categorie: 
-     * amministratore, studente e docente, corrispondenti alle sottocartelle 
+     * (le funzionalita' sono divise in due categorie: 
+     *  utente e venditore, corrispondenti alle sottocartelle 
      * di view nel progetto)
      * @var string 
      */

@@ -9,13 +9,8 @@ if (!$vd->isJson()) {
          pagina master, contiene tutto il layout della applicazione 
          le varie pagine vengono caricate a "pezzi" a seconda della zona
          del layout:
-         - logo (header)
-         - menu (i tab)
-         - leftBar (sidebar sinistra)
+         - Titolo (header)  
          - content (la parte centrale con il contenuto)
-         - rightBar (sidebar destra)
-         - footer (footer)
-
           Queste informazioni sono manentute in una struttura dati, chiamata ViewDescriptor
           la classe contiene anche le stringhe per i messaggi di feedback per 
           l'utente (errori e conferme delle operazioni)
@@ -38,7 +33,8 @@ if (!$vd->isJson()) {
         </head>
         <body>
             <div id="pagina">
-                <?php
+                <div id="titolo">
+                 <?php
                         $titolo = $vd->getTitoloFile();
                         require "$titolo";
                 ?>

@@ -13,17 +13,14 @@ class vende {
 	/**
 	*venditore del libro
 	*/
-	private $venditore
+	private $venditore;
 
 	/**
 	*libro della vendita
 	*/
-	private $libro
+	private $libro;
 	
-	/**
-	*identificatore messa in vendita
-	*/
-	private $id
+	
 	
 
 	/**
@@ -34,28 +31,6 @@ class vende {
     }
 	
 
-	/**
-     * Restituisce l'indentificatore dell'acquisto
-     * @return int
-     */
-    public function getId() {
-        return $this->id;
-    }
-
-    /**
-     * Modifica il valore dell'identificatore 
-     * @param int $id il nuovo id per l'acquisto
-     * @return boolean true se il valore e' stato modificato, 
-     *                 false altrimenti
-     */
-    public function setId($id) {
-        $intVal = filter_var($id, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
-        if (!isset($intVal)) {
-            return false;
-        }
-        $this->id = $intVal;
-        return true;
-    }
 
 	/**
      * Restituisce il libro che è stato messo in vendita

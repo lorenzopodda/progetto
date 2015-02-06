@@ -13,17 +13,17 @@ class Acquista {
 	/**
 	*utente dell'acquisto
 	*/
-	private $utente
+	private $utente;
 
 	/**
 	*libro dell'acquisto
 	*/
-	private $libro
+	private $libro;
 
 	/**
 	*numero dell'acquisto
 	*/
-	private $id
+	private $numeroAcquisto;
 
 	/**
      * Costrutture dell'acquisto
@@ -37,8 +37,8 @@ class Acquista {
      * Restituisce l'indentificatore dell'acquisto
      * @return int
      */
-    public function getId() {
-        return $this->id;
+    public function getNumeroAcquisto() {
+        return $this->numeroAcquisto;
     }
 
     /**
@@ -47,12 +47,12 @@ class Acquista {
      * @return boolean true se il valore e' stato modificato, 
      *                 false altrimenti
      */
-    public function setId($id) {
-        $intVal = filter_var($id, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
+    public function setNumeroAcquisto($numeroAcquisto) {
+        $intVal = filter_var($numeroAcquisto, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
         if (!isset($intVal)) {
             return false;
         }
-        $this->id = $intVal;
+        $this->numeroAcquisto = $intVal;
         return true;
     }
 

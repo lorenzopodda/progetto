@@ -47,7 +47,7 @@ class UserFactory {
         // cerco prima nella tabella utente
         $query = "select * 
             
-            from negozio_online.utente 
+            from libreria.utente 
             
             where utente.username = ? and utente.pw = ?";
         $stmt = $mysqli->stmt_init();
@@ -66,19 +66,19 @@ class UserFactory {
             return null;
         }
 
-        $studente = self::caricaStudenteDaStmt($stmt);
-        if (isset($studente)) {
-            // ho trovato uno studente
+        $utente = self::caricaUtenteDaStmt($stmt);
+        if (isset($utente)) {
+            // ho trovato un utente
             $mysqli->close();
-            return $studente;
+            return $utente;
         }
 
-	}
+	
 
-        // ora cerco un docente
+        // ora cerco un venditore
         $query = "select *
                
-               from negozio_online.venditore 
+               from libreria.venditore 
                where vendtitore.username = ? and venditore.pw = ?";
 
         $stmt = $mysqli->stmt_init();
@@ -97,11 +97,11 @@ class UserFactory {
             return null;
         }
 
-        $docente = self::caricaDocenteDaStmt($stmt);
-        if (isset($docente)) {
+        $venditore = self::caricaVenditoreDaStmt($stmt);
+        if (isset($venditore)) {
             // ho trovato venditore
             $mysqli->close();
-            return $docente;
+            return $venditore;
         }
     }
 

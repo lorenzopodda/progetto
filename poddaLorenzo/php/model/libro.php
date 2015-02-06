@@ -1,8 +1,5 @@
 <?php
 
-
-include_once 'Genere.php';
-include_once 'Autore.php';
 /**
  * Classe che rappresenta un libro
  */
@@ -12,42 +9,35 @@ class Libro {
 	/**
      * id del libro
      */
-    private $id;
+    private $idLibro;
 
 	/**
 	* titolo del libro
 	*/
-	private $titolo
+	private $titolo;
 
-	/**
-	* anno di uscita  del libro
-	*/
-	private $anno_uscita
-
-	/**
-	* numero copie del libro
-	*/
-	private $numero_copie
 
 	/**
 	* prezzo del libro
-	*/
-	private $prezzo
+	**/
+	private $prezzo;
 
-	/**
-	* trama del libro
-	*/
-	private $trama
+	
 	
 	/**
-	*autore del libro
+	*nome autore del libro
 	*/
-	private $autore
+	private $nomeAutore;
+        
+        /**
+	*Cognome autore del libro
+	*/
+	private $cognomeAutore;
 	
 	/**
 	*genere del libro
 	*/
-	private $genere
+	private $genere;
 
 	/**
      * Costrutture di un libro
@@ -72,37 +62,6 @@ class Libro {
         return $this->titolo;
     }
 	
-	/**
-     * Imposta l'anno di uscita di un libro
-     
-     */
-    public function setAnnoUscita($anno_uscita){
-        $this->anno_uscita = $anno_uscita;
-    }
-    
-    /**
-     * Restituisce l'anno di uscita del libro
-     
-     */
-    public function getAnnoUscita() {
-        return $this->anno_uscita;
-    }
-	
-	/**
-     * Imposta numero di copie di un libro
-     
-     */
-    public function setNumeroCopie($numero_copie){
-        $this->numero_copie = $numero_copie;
-    }
-    
-    /**
-     * Restituisce il numero di copie del libro
-     
-     */
-    public function getNumerocopie() {
-        return $this->numero_copie;
-    }
 	
 	/**
      * Impostail prezzo di un libro
@@ -120,35 +79,35 @@ class Libro {
         return $this->prezzo;
     }
 	
-	/**
-     * Imposta la trama di un libro
-     
-     */
-    public function setTrama($trama){
-        $this->trama = $trama;
-    }
-    
-    /**
-     * Restituisce la trama del libro
-     
-     */
-    public function getTrama() {
-        return $this->trama;
-    }
 
 	/**
-     * Restituisce l'autore del libro
+     * Restituisce il nome dell'autore del libro
      * @return Autore
      */
-    public function getAutore() {
-        return $this->autore;
+    public function getNomeAutore() {
+        return $this->nomeAutore;
     }
 
     /**
      * Imposta un nuovo autore
      */
-    public function setAutore(autore $autore) {
-        $this->Autore = $autore;
+    public function setNomeAutore( $nomeAutore) {
+        $this->nomeAutore = $nomeAutore;
+    }
+    
+    /**
+     * Restituisce il nome dell'autore del libro
+     * @return Autore
+     */
+    public function getNomeAutore() {
+        return $this->nomeAutore;
+    }
+
+    /**
+     * Imposta un nuovo autore
+     */
+    public function setCognomeAutore( $cognomeAutore) {
+        $this->cognomeAutore = $cognomeAutore;
     }
 
 	/**
@@ -163,7 +122,7 @@ class Libro {
      * Imposta un nuovo genere per il libro
      
      */
-    public function setGenere(Genere $genere) {
+    public function setgenere( $genere) {
         $this->genere = $genere;
     }
 
@@ -171,16 +130,16 @@ class Libro {
      * Restituisce l'identificatore del libro
      * @return int
      */
-    public function getId() {
-        return $this->id;
+    public function getIdLIbro() {
+        return $this->idLibro;
     }
     
     /**
      * Imposta un nuovo identificatore per il libro
      * @param int $id
      */
-    public function setId($id){
-        $this->id = $id;
+    public function setIdLibro($idLibro){
+        $this->idLibro = $idLibro;
     }
 
     /**

@@ -64,9 +64,9 @@ class StudenteController extends BaseController {
                         break;
 
                     // visualizzazione contenuto carrello
-                    case 'carrello':
+                    case 'ricerca':
                         
-                        $vd->setContentFile('carrello');
+                        $vd->setContentFile('ricerca');
                         break;
 
                     
@@ -103,9 +103,7 @@ class StudenteController extends BaseController {
         require basename(__DIR__) . '/../view/master.php';
     }
 
-   
     }
-
-}
+    
 
 ?>

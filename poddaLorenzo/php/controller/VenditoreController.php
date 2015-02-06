@@ -49,9 +49,9 @@ class VenditoreController extends BaseController {
                 switch ($request["subpage"]) {
 
                     // pagina iniziale sezione amministratore/venditore
-                    case 'amministratore':
+                    case 'venditore':
                         
-                        $vd->setContentFile('amministratore');
+                        $vd->setContentFile('venditore');
                         break;
 
                     // inserimento nuovi libri
@@ -66,17 +66,12 @@ class VenditoreController extends BaseController {
                         $vd->setContentFile('cancella');
                         break;
 
-		    //visualizzare ordini
-		    case 'ordini':
-                        
-                        $vd->setContentFile('ordini');
-                        break;
                     default:
                         $vd->setSottoPagina('home');
                         break;
                 }
             }
-
+        }
 
             // gestione dei comandi inviati dal venditore
             if (isset($request["cmd"])) {
@@ -89,7 +84,10 @@ class VenditoreController extends BaseController {
                         break;
 
                    
-
+                }
+}
 }
 
+        }
+    
 ?>

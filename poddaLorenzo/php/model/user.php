@@ -61,11 +61,7 @@ class User {
     private $indirizzo;
     
    
-    /**
-     * Identificatore dell'utente
-     * @var int
-     */
-    private $id;
+    
 
     /**
      * Costruttore
@@ -221,41 +217,9 @@ class User {
     }
 
     
-    /**
-     * Restituisce un identificatore unico per l'utente
-     * @return int
-     */
-    public function getId(){
-        return $this->id;
-    }
     
-    /**
-     * Imposta un identificatore unico per l'utente
-     * @param int $id
-     * @return boolean true se il valore e' stato aggiornato correttamente,
-     * false altrimenti
-     */
-    public function setId($id){
-        $intVal = filter_var($id, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
-        if(!isset($intVal)){
-            return false;
-        }
-        $this->id = $intVal;
-    }
     
-    /**
-     * Compara due utenti, verificandone l'uguaglianza logica
-     * @param User $user l'utente con cui comparare $this
-     * @return boolean true se i due oggetti sono logicamente uguali, 
-     * false altrimenti
-     */
-    public function equals(User $user) {
-
-        return  $this->id == $user->id &&
-                $this->nome == $user->nome &&
-                $this->cognome == $user->cognome &&
-                $this->ruolo == $user->ruolo;
-    }
+    
 
 }
 

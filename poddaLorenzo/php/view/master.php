@@ -39,7 +39,7 @@ if (!$vd->isJson()) {
         <body>
             <div id="pagina">
                 <?php
-                        $titolo = $vd->getTitolo();
+                        $titolo = $vd->getTitoloFile();
                         require "$titolo";
                 ?>
 		    

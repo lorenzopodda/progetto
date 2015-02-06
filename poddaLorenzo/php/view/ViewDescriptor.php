@@ -20,6 +20,8 @@ class ViewDescriptor {
      * @var string
      */
     private $titolo;
+    
+    private $titolo_file;
 
 
     /**
@@ -95,7 +97,22 @@ class ViewDescriptor {
         $this->titolo = $titolo;
     }
 
+    /**
+     * Imposta il file che include la definizione HTML del titolo
+     * @return string
+     */
     
+    public function setTitoloFile($titoloFile) {
+        $this->titolo_file = $titoloFile;
+    }
+
+    /**
+     * Restituisce il path al file che contiene il titolo
+     * @return string
+     */
+    public function getTitoloFile() {
+        return $this->titolo_file;
+    }
 
  /**
      * Imposta il file che include la definizione HTML del contenuto principale

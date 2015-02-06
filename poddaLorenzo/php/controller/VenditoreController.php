@@ -36,7 +36,7 @@ class VenditoreController extends BaseController {
             $this->showLoginPage($vd);
         } else {
             // utente autenticato
-            $user = UserFactory::instance()->cercaUtentePerId(
+            $user = UserFactory::instance()->cercaVenditorePerId(
                     $_SESSION[BaseController::user], $_SESSION[BaseController::role]);
 
             // verifico quale sia la sottopagina della categoria

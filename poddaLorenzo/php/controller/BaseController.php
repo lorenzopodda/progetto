@@ -1,8 +1,8 @@
 <?php
 
 include_once basename(__DIR__) . '/../view/ViewDescriptor.php';
-include_once basename(__DIR__) . '/../model/User.php';
-include_once basename(__DIR__) . '/../model/UserFactory.php';
+include_once basename(__DIR__) . '/../model/user.php';
+include_once basename(__DIR__) . '/../model/userFactory.php';
 
 /**
  * Controller che gestisce gli utenti non autenticati, 
@@ -87,19 +87,31 @@ class BaseController {
      */
     protected function showLoginPage($vd) {
         // mostro la pagina di login
-        $vd->setTitolo("Libreria-online");
+        $vd->setTitolo("Libreria-Login");
+        $vd->setContentFile(basename(__DIR__) . '/../view/login/titolo.php');
         $vd->setContentFile(basename(__DIR__) . '/../view/login/content.php');
+    }
+    
+    /**
+     * Imposta la vista master.php per visualizzare la pagina di registrazione
+     * @param ViewDescriptor $vd il descrittore della vista
+     */
+    protected function showRegistrazionePage($vd) {
+        // mostro la pagina di login
+        $vd->setTitolo("Libreria-Registrazione");
+        $vd->setContentFile(basename(__DIR__) . '/../view/registrazione/titolo.php');
+        $vd->setContentFile(basename(__DIR__) . '/../view/registrazione/content.php');
     }
 
     /**
      * Imposta la vista master.php per visualizzare la pagina di gestione dell'utente
      * @param ViewDescriptor $vd il descrittore della vista
      */
-    protected function showHomeStudente($vd) {
+    protected function showHomeUtente($vd) {
         // mostro la home degli utenti
 
-        $vd->setTitolo("gestione utente ");
-        
+        $vd->setTitolo("Libreria-utente ");
+        $vd->setContentFile(basename(__DIR__) . '/../view/utente/titolo.php');
         $vd->setContentFile(basename(__DIR__) . '/../view/utente/content.php');
     }
 
@@ -107,9 +119,10 @@ class BaseController {
      * Imposta la vista master.php per visualizzare la pagina di gestione del venditore
      * @param ViewDescriptor $vd il descrittore della vista
      */
-    protected function showHomeDocente($vd) {
+    protected function showHomeVenditore($vd) {
         // mostro la home del venditore
-        $vd->setTitolo("gestione amministratore&venditore ");
+        $vd->setTitolo("Libreria-venditore");
+           $vd->setContentFile(basename(__DIR__) . '/../view/venditore/titolo.php');
         $vd->setContentFile(basename(__DIR__) . '/../view/venditore/content.php');
     }
 
@@ -118,7 +131,7 @@ class BaseController {
      * Seleziona quale pagina mostrare in base al ruolo dell'utente corrente
      * @param ViewDescriptor $vd il descrittore della vista
      */
-    protected function showHomeUtente($vd) {
+    protected function showHome($vd) {
         $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
         switch ($user->getRuolo()) {
             case User::Utente:

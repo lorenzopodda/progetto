@@ -70,6 +70,7 @@
     </ul>
 
     <h2>Accesso al progetto</h2>
+    <p>Likn per accesso al progetto:<a href="html/home.html">http://localhost/progetto/poddaLorenzo/html/home.html</a></p>
     <p>Si pu&ograve; accedere alla applicazione con le seguenti credenziali</p>
     <ul>
         <li>Ruolo venditore:</li>

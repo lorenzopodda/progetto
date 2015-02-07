@@ -99,7 +99,7 @@ class Libro {
      * Restituisce il nome dell'autore del libro
      * @return Autore
      */
-    public function getNomeAutore() {
+    public function getCognomeAutore() {
         return $this->nomeAutore;
     }
 

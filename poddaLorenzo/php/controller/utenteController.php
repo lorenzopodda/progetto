@@ -1,7 +1,7 @@
 <?php
 
 include_once 'BaseController.php';
-include_once basename(__DIR__) . '/../model/acquistaFactory.php';
+include_once basename(__DIR__) . '/../model/acquista.php';
 include_once basename(__DIR__) . '/../model/libroFactory.php';
 
 /**

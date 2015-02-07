@@ -21,7 +21,7 @@ div #titolo { background-color: #F3F9F9;
 		border-top:1px;
 		border-right:1px;
 		border-left:1px;
-		border-bottom:1px%;
+		border-bottom:1px;
 		height: 75px;
 		width:1342px;
 		border-bottom:solid;
@@ -122,7 +122,7 @@ div #prodotto {position: relative;
 		border-top:1px;
 		border-right:1px;
 		border-left:1px;
-		border-bottom:1px
+		border-bottom:1px;
 		position: fixed; 
 		border:solid;
 		height:100px;

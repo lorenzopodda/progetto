@@ -10,7 +10,7 @@ include_once basename(__DIR__) . '/../model/libroFactory.php';
  */
 class VenditoreController extends BaseController {
 
-    const elenco = 'elenco';
+    const vende = 'vende';
 
     public function __construct() {
         parent::__construct();
@@ -85,7 +85,12 @@ class VenditoreController extends BaseController {
 
                    
                 }
-}
+}else {
+                // nessun comando
+                $user = UserFactory::instance()->cercaUtentePerId(
+                                $_SESSION[BaseController::user], $_SESSION[BaseController::role]);
+                $this->showHomeUtente($vd);
+            }
 }
      
 

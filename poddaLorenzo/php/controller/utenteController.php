@@ -9,7 +9,7 @@ include_once basename(__DIR__) . '/../model/libroFactory.php';
 **/
 class StudenteController extends BaseController {
 
-    const login = 'login';
+    const acquista = 'acquista';
 
     /**
      * Costruttore
@@ -41,7 +41,6 @@ class StudenteController extends BaseController {
 
         if (!$this->loggedIn()) {
             // utente non autenticato, rimando alla home
-
             $this->showLoginPage($vd);
         } else {
             // utente autenticato

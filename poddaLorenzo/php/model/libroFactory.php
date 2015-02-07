@@ -7,7 +7,7 @@ include_once 'libro.php';
  * Classe per la creazione dei libri
  
  */
-class UserFactory {
+class LibroFactory {
 
     private static $singleton;
 

@@ -31,6 +31,13 @@ class FrontController {
                     $controller = new BaseController();
                     $controller->handleInput($request);
                     break;
+                //registrazione
+                case "registrazione":
+                    // la pagina di registrazione e' accessibile a tutti,
+                    // la facciamo gestire al BaseController
+                    $controller = new BaseController();
+                    $controller->handleInput($request);
+                    break;
 
                 // studente
                 case 'utente':

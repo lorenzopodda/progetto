@@ -54,16 +54,7 @@ class BaseController {
                     if ($this->loggedIn())
                         $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
                     break;
-                case 'registrazione':
-                     $username = isset($request['user']) ? $request['user'] : '';
-                     $password = isset($request['password']) ? $request['password'] : '';
-                     $nome = isset($request['nome']) ? $request['nome'] : '';
-                     $cognome = isset($request['cognome']) ? $request['cognome'] : '';
-                     $Indirizzo = isset($request['Indirizzo']) ? $request['Indirizzo'] : '';
-                     $email = isset($request['email']) ? $request['email'] : '';
-                     $credito = isset($request['credito']) ? $request['credito'] : '';
-                     
-                     break;
+                
                 default : $this->showLoginPage();
             }
         } else {

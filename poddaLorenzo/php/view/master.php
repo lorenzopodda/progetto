@@ -2,7 +2,7 @@
 include_once 'ViewDescriptor.php';
 include_once basename(__DIR__) . '/../Settings.php';
 
-if (!$vd->isJson()) {
+//if (!$vd->isJson()) {
     ?>
     <!DOCTYPE html>
     <!-- 
@@ -69,7 +69,7 @@ if (!$vd->isJson()) {
         </body>
     </html>
     <?php
-} else {
+/*} else {
 
     header('Cache-Control: no-cache, must-revalidate');
     header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
@@ -77,7 +77,7 @@ if (!$vd->isJson()) {
     
     $content = $vd->getContentFile();
     require "$content";
-}
+}*/
 ?>
 
 

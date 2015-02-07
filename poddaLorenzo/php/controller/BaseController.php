@@ -88,7 +88,7 @@ class BaseController {
     protected function showLoginPage($vd) {
         // mostro la pagina di login
         $vd->setTitolo("Libreria-Login");
-        $vd->setContentFile(basename(__DIR__) . '/../view/login/titolo.php');
+        $vd->setTitoloFile(basename(__DIR__) . '/../view/login/titolo.php');
         $vd->setContentFile(basename(__DIR__) . '/../view/login/content.php');
     }
     
@@ -99,7 +99,7 @@ class BaseController {
     protected function showRegistrazionePage($vd) {
         // mostro la pagina di login
         $vd->setTitolo("Libreria-Registrazione");
-        $vd->setContentFile(basename(__DIR__) . '/../view/registrazione/titolo.php');
+        $vd->setTitoloFile(basename(__DIR__) . '/../view/registrazione/titolo.php');
         $vd->setContentFile(basename(__DIR__) . '/../view/registrazione/content.php');
     }
 
@@ -111,7 +111,7 @@ class BaseController {
         // mostro la home degli utenti
 
         $vd->setTitolo("Libreria-utente ");
-        $vd->setContentFile(basename(__DIR__) . '/../view/utente/titolo.php');
+        $vd->setTitoloFile(basename(__DIR__) . '/../view/utente/titolo.php');
         $vd->setContentFile(basename(__DIR__) . '/../view/utente/content.php');
     }
 
@@ -122,7 +122,7 @@ class BaseController {
     protected function showHomeVenditore($vd) {
         // mostro la home del venditore
         $vd->setTitolo("Libreria-venditore");
-           $vd->setContentFile(basename(__DIR__) . '/../view/venditore/titolo.php');
+           $vd->setTitoloFile(basename(__DIR__) . '/../view/venditore/titolo.php');
         $vd->setContentFile(basename(__DIR__) . '/../view/venditore/content.php');
     }
 

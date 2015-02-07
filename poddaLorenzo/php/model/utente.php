@@ -1,6 +1,6 @@
 <?php
 
-include_once 'User.php';
+include_once 'user.php';
 
 /**
  * Classe che rappresenta un utente

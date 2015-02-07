@@ -2,7 +2,7 @@
 
 
 include_once 'controller/BaseController.php';
-include_once 'controller/UtenteController.php';
+include_once 'controller/utenteController.php';
 include_once 'controller/VenditoreController.php';
 
 date_default_timezone_set("Europe/Rome");
@@ -11,7 +11,7 @@ FrontController::dispatch($_REQUEST);
 
 /**
  * Classe che controlla il punto unico di accesso all'applicazione
- * @author Davide Spano
+ 
  */
 class FrontController {
 
@@ -34,10 +34,10 @@ class FrontController {
 
                 // studente
                 case 'utente':
-                    // la pagina degli studenti e' accessibile solo agli studenti
-                    // agli studenti ed agli amminstratori
+                    // la pagina degli utenti e' accessibile solo agli utenti
+                    
                     // il controllo viene fatto dal controller apposito
-                    $controller = new UtenteController();
+                    $controller = new utenteController();
                     if (isset($_SESSION[BaseController::role]) &&
                         $_SESSION[BaseController::role] != User::Utente) {
                         self::write403();
@@ -47,8 +47,8 @@ class FrontController {
 
                 // docente
                 case 'venditore':
-                    // la pagina dei docenti e' accessibile solo
-                    // ai docenti ed agli amminstratori
+                    // la pagina del venditore e' accessibile solo al venditore
+                    
                     // il controllo viene fatto dal controller apposito
                     $controller = new VenditoreController();
                     if (isset($_SESSION[BaseController::role]) &&
@@ -72,7 +72,7 @@ class FrontController {
      */
     public static function write404() {
         // impostiamo il codice della risposta http a 404 (file not found)
-        header('HTTP/1.0 404 Not Found');
+        titolo('HTTP/1.0 404 Not Found');
         $titolo = "File non trovato!";
         $messaggio = "La pagina che hai richiesto non &egrave; disponibile";
         include_once('error.php');
@@ -85,7 +85,7 @@ class FrontController {
      */
     public static function write403() {
         // impostiamo il codice della risposta http a 404 (file not found)
-        header('HTTP/1.0 403 Forbidden');
+        titolo('HTTP/1.0 403 Forbidden');
         $titolo = "Accesso negato";
         $messaggio = "Non hai i diritti per accedere a questa pagina";
         $login = true;

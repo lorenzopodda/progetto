@@ -1,7 +1,7 @@
 <?php
 
 include_once 'BaseController.php';
-include_once basename(__DIR__) . '/../model/vendeFactory.php';
+include_once basename(__DIR__) . '/../model/vende.php';
 include_once basename(__DIR__) . '/../model/libroFactory.php';
 
 
@@ -36,7 +36,7 @@ class VenditoreController extends BaseController {
             $this->showLoginPage($vd);
         } else {
             // utente autenticato
-            $user = UserFactory::instance()->cercaVenditorePerId(
+            $user = UserFactory::instance()->cercaUtentePerId(
                     $_SESSION[BaseController::user], $_SESSION[BaseController::role]);
 
             // verifico quale sia la sottopagina della categoria
@@ -48,7 +48,7 @@ class VenditoreController extends BaseController {
             if (isset($request["subpage"])) {
                 switch ($request["subpage"]) {
 
-                    // pagina iniziale sezione amministratore/venditore
+                    // pagina iniziale sezione venditore
                     case 'venditore':
                         
                         $vd->setContentFile('venditore');
@@ -87,6 +87,7 @@ class VenditoreController extends BaseController {
                 }
 }
 }
+     
 
         }
     

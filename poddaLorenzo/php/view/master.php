@@ -35,8 +35,8 @@ include_once basename(__DIR__) . '/../Settings.php';
             <div id="pagina">
                 <div id="titolo">
                  <?php
-                        $titolo = $vd->getTitoloFile();
-                        require "$titolo";
+                        $titoloFile = $vd->getTitoloFile();
+                        require "$titoloFile";
                 ?>
 		    
              </div>

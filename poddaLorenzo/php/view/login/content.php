@@ -4,7 +4,8 @@
 		
 		<br/>
 		<div id="login">
-			<form action="" method="">
+			<form action="post" method="login">
+                        
 			<label for="user">Username</label>
 			<input type="text" name="user" id="user" value=""/>
 			<br />

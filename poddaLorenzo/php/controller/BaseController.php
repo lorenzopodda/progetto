@@ -55,7 +55,7 @@ class BaseController {
                         $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
                     break;
                 
-                default : $this->showRegistrazionePage();
+                default : $this->showLoginPage();
             }
         } else {
             if ($this->loggedIn()) {

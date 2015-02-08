@@ -92,7 +92,7 @@ class FrontController {
      */
     public static function write403() {
         // impostiamo il codice della risposta http a 404 (file not found)
-        titolo('HTTP/1.0 403 Forbidden');
+        header('HTTP/1.0 403 Forbidden');
         $titolo = "Accesso negato";
         $messaggio = "Non hai i diritti per accedere a questa pagina";
         $login = true;

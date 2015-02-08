@@ -5,7 +5,7 @@
 		<br/>
 		<div id="login">
 			<form action="post" method="login">
-                        
+                        <input type="hidden" name="cmd" value="login"/>
 			<label for="user">Username</label>
 			<input type="text" name="user" id="user" value=""/>
 			<br />

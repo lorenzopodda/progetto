@@ -50,7 +50,7 @@ class UserFactory {
             
             from libreria.utente 
             
-            where utente.username = ? and utente.pw = ?";
+            where utente.Username = ? and utente.PW = ?";
         $stmt = $mysqli->stmt_init();
         $stmt->prepare($query);
         if (!$stmt) {
@@ -80,7 +80,7 @@ class UserFactory {
         $query = "select *
                
                from libreria.venditore 
-               where vendtitore.username = ? and venditore.pw = ?";
+               where vendtitore.Username = ? and venditore.PW = ?";
 
         $stmt = $mysqli->stmt_init();
         $stmt->prepare($query);

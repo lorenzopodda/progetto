@@ -10,7 +10,7 @@
 			<input type="text" name="user" id="user" value=""/>
 			<br />
 			<label for="pswd">Password</label>
-			<input type="password" name="pswd” "id="pswd" value="oscurato" />
+			<input type="password" name="pswd "id="pswd" value="oscurato" />
 			<br />
 			<button type="submit">Login</button>
 			</form>

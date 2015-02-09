@@ -4,9 +4,9 @@
 class Settings {
 
     // variabili di accesso per il database
-    public static $db_host = 'localhost';
-    public static $db_user = 'root';
-    public static $db_password = 'davide';
+    public static $db_host = 'http://spano.sc.unica.it';
+    public static $db_user = 'lorenzoPodda';
+    public static $db_password = 'ippopotamo969';
     public static $db_name='libreria';
     
     private static $appPath;

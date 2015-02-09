@@ -62,11 +62,11 @@ class StudenteController extends BaseController {
                         $vd->setContentFile('acquisti');
                         break;
 
-                    // visualizzazione contenuto carrello
+                    /**visualizzazione contenuto carrello
                     case 'ricerca':
                         
                         $vd->setContentFile('ricerca');
-                        break;
+                        break;**/
 
                     
                     default:

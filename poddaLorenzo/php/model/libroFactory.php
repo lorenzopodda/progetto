@@ -105,7 +105,35 @@ class LibroFactory {
         $mysqli->close();
         return $toRet;
     }
+    
+    //inserisci nuovi libri
+    public function InserisciLibro() {
+        $mysqli = Db::getInstance()->connectDb();
+        if (!isset($mysqli)) {
+            error_log("[InserisciLibro] impossibile inizializzare il database");
+            $mysqli->close();
+            return false;
+        }
+        $stmt = $mysqli->stmt_init();
+        
 
+        $insert_libro = "insert into libro  values (default, ?, ?, ?, ?, ?)";
+        $stmt->prepare($insert_libro);
+        if (!$stmt) {
+            error_log("[inserisciLibro] impossibile" .
+                    " inizializzare il prepared statement n 1");
+            $mysqli->close();
+            return false;
+        }
+
+
+        
+        }
+        //cancella libro
+        public function cancellalibro(Studente $s, Appello $a){
+        $query = "delete from libro where titolo = ? ";
+        return $this->queryIscrizione($s, $a, $query);
+    }
 	
 
 

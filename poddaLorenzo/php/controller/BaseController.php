@@ -93,16 +93,6 @@ class BaseController {
         $vd->setContentFile(basename(__DIR__) . '/../view/login/content.php');
     }
     
-    /**
-     * Imposta la vista master.php per visualizzare la pagina di registrazione
-     * @param ViewDescriptor $vd il descrittore della vista
-     */
-    protected function showRegistrazionePage($vd) {
-        // mostro la pagina di login
-        $vd->setTitolo("Libreria-Registrazione");
-        $vd->setTitoloFile(basename(__DIR__) . '/../view/registrazione/titolo.php');
-        $vd->setContentFile(basename(__DIR__) . '/../view/registrazione/content.php');
-    }
 
     /**
      * Imposta la vista master.php per visualizzare la pagina di gestione dell'utente

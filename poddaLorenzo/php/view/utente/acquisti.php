@@ -1,8 +1,46 @@
 <div id="acquisti">
-	<p>Stato ordini</p>
+	<p>Acquista!!!</p>
 	<br/>
 		<div id="prodotto">
-			<p>prodotto1</p>
+			<?php if (count($libri) > 0) { ?>
+    <table>
+        <thead>
+            <tr>
+                <th class="libro-col-small">IdLibro</th>
+                <th class="libro-col-large">Titolo</th>
+                <th class="esami-col-large">nomeAutore</th>
+                <th class="esami-col-large">cognomeAutore</th>
+                <th class="esami-col-small">Genere</th>
+                <th class="esami-col-small">Prezzo</th>
+                <th class="esami-col-large">Acquista</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            $i = 0;
+
+            foreach ($libri as $libro) {
+                ?>
+                <tr <?= $i % 2 == 0 ? 'class="alt-row"' : '' ?>>
+                    <td><?= $libro->getListaLibri()->getIdLibro() ?></td>
+                    <td><?= $libro->getListaLibri()->getTitolo() ?></td>
+                    <td><?= $libro->getListaLibri()-> getNomeAutore() ?></td>
+                    <td><?= $libro->getListaLibri()->getCognomeAutore() ?></td>
+                    <td><?= $libro->getListaLibri()->getGenere()?></td>
+                    <td><?= $libro->getListaLibri()->getPrezzo() ?></td>
+                    <td>
+                       <button type="submit">Acquista</button> 
+                    </td>
+                </tr>
+                <?php
+                $i++;
+            }
+            ?>
+        </tbody>
+    </table>
+<?php } else { ?>
+    <p> Nessun libro inserito </p>
+<?php } ?>
 		</div>
 </div>	
 <div id="genere">

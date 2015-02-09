@@ -7,11 +7,7 @@ include_once 'user.php';
 
  */
 class Utente extends User {
-     /**
-     * Identificatore dell'utente
-     * @var int
-     */
-    private $idUtente;
+     
 
     /**
      * Il credito dell'utente 
@@ -39,26 +35,6 @@ class Utente extends User {
         $this->credito = $credito;
 	}
         
-        /**
-     * Restituisce un identificatore unico per l'utente
-     * @return int
-     */
-    public function getIdUtente(){
-        return $this->idUtente;
-    }
-    
-    /**
-     * Imposta un identificatore unico per l'utente
-     * @param int $id
-     * @return boolean true se il valore e' stato aggiornato correttamente,
-     * false altrimenti
-     */
-    public function setIdUtente($idUtente){
-        $intVal = filter_var($idUtente, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
-        if(!isset($intVal)){
-            return false;
-        }
-        $this->idUtente = $intVal;
-    }
+       
 }
 ?>

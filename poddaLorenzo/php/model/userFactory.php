@@ -48,7 +48,7 @@ class UserFactory {
         
         $query = "select *
             
-            from libreria.utente 
+            from amm14_lorenzoPodda.utente 
             
             where utente.Username = ? and utente.PW = ?";
         $stmt = $mysqli->stmt_init();
@@ -79,7 +79,7 @@ class UserFactory {
         // ora cerco un venditore
         $query = "select *
                
-               from libreria.venditore 
+               from amm14_lorenzoPodda.venditore 
                where vendtitore.Username = ? and venditore.PW = ?";
 
         $stmt = $mysqli->stmt_init();
@@ -125,7 +125,7 @@ class UserFactory {
 
         switch ($role) {
             case User::Utente:
-                $query = "select * from libreria.utente where IdUtente = ?";
+                $query = "select * from amm14_lorenzoPodda.utente where IdUtente = ?";
                 $stmt = $mysqli->stmt_init();
                 $stmt->prepare($query);
                 if (!$stmt) {
@@ -145,13 +145,13 @@ class UserFactory {
                 return self::caricaUtenteDaStmt($stmt);
                 break;
 
-            case User::Docente:
-                $query = "select * from libreria.venditore where IdVenditore = ?";
+            case User::Venditore:
+                $query = "select * from amm14_lorenzoPodda.venditore where IdVenditore = ?";
 
                 $stmt = $mysqli->stmt_init();
                 $stmt->prepare($query);
                 if (!$stmt) {
-                    error_log("[cercaUtentePerId] impossibile" .
+                    error_log("[cercaVenditorePerId] impossibile" .
                             " inizializzare il prepared statement");
                     $mysqli->close();
                     return null;

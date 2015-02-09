@@ -14,7 +14,7 @@ class Libro {
 	/**
 	* titolo del libro
 	*/
-	private $titolo;
+	private $titoloLibro;
 
 
 	/**
@@ -50,16 +50,16 @@ class Libro {
      * Imposta il titolo di un libro
      
      */
-    public function setTitolo($titolo){
-        $this->titolo = $titolo;
+    public function setTitoloLibro($titoloLibro){
+        $this->titoloLibro = $titoloLibro;
     }
     
     /**
      * Restituisce il titolo del libro
      * @return string
      */
-    public function getTitolo() {
-        return $this->titolo;
+    public function getTitoloLibro() {
+        return $this->titoloLibro;
     }
 	
 	

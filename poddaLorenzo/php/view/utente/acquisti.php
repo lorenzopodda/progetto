@@ -23,7 +23,7 @@
                 ?>
                 <tr <?= $i % 2 == 0 ? 'class="alt-row"' : '' ?>>
                     <td><?= $libro->getListaLibri()->getIdLibro() ?></td>
-                    <td><?= $libro->getListaLibri()->getTitolo() ?></td>
+                    <td><?= $libro->getListaLibri()->getTitoloLibro() ?></td>
                     <td><?= $libro->getListaLibri()-> getNomeAutore() ?></td>
                     <td><?= $libro->getListaLibri()->getCognomeAutore() ?></td>
                     <td><?= $libro->getListaLibri()->getGenere()?></td>

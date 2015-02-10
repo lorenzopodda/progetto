@@ -100,7 +100,7 @@ class User {
     public function setUsername($username) {
         // utilizzo la funzione filter var specificando un'espressione regolare
         // che implementa la validazione personalizzata
-        if (!filter_var($username, FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/[a-zA-Z]{5,}/')))) {
+        if (!filter_var($username, FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/[a-zA-Z][0-9]{5,}/')))) {
             return false;
         }
         $this->username = $username;

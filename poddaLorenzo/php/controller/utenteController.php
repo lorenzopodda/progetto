@@ -44,7 +44,7 @@ class StudenteController extends BaseController {
             $this->showLoginPage($vd);
         } else {
             // utente autenticato
-            $user = UserFactory::instance()->cercaUtentePerId(
+            $user = userFactory::instance()->cercaUtentePerId(
                             $_SESSION[BaseController::user], $_SESSION[BaseController::role]);
 
 
@@ -92,7 +92,7 @@ class StudenteController extends BaseController {
                 }
             } else {
                 // nessun comando
-                $user = UserFactory::instance()->cercaUtentePerId(
+                $user = userFactory::instance()->cercaUtentePerId(
                                 $_SESSION[BaseController::user], $_SESSION[BaseController::role]);
                 $this->showHomeUtente($vd);
             }

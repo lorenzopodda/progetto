@@ -22,7 +22,7 @@ class UserFactory {
      */
     public static function instance() {
         if (!isset(self::$singleton)) {
-            self::$singleton = new UserFactory();
+            self::$singleton = new userFactory();
         }
 
         return self::$singleton;

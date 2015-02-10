@@ -36,7 +36,7 @@ class VenditoreController extends BaseController {
             $this->showLoginPage($vd);
         } else {
             // utente autenticato
-            $user = UserFactory::instance()->cercaUtentePerId(
+            $user = userFactory::instance()->cercaUtentePerId(
                     $_SESSION[BaseController::user], $_SESSION[BaseController::role]);
 
             // verifico quale sia la sottopagina della categoria
@@ -87,7 +87,7 @@ class VenditoreController extends BaseController {
                 }
 }else {
                 // nessun comando
-                $user = UserFactory::instance()->cercaUtentePerId(
+                $user = userFactory::instance()->cercaUtentePerId(
                                 $_SESSION[BaseController::user], $_SESSION[BaseController::role]);
                 $this->showHomeUtente($vd);
             }

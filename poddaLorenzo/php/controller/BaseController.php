@@ -61,7 +61,7 @@ class BaseController {
             if ($this->loggedIn()) {
                 //utente autenticato
                 // questa variabile viene poi utilizzata dalla vista
-                $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
+                $user = userFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
 
                 $this->showHome($vd);
             } else {
@@ -123,7 +123,7 @@ class BaseController {
      * @param ViewDescriptor $vd il descrittore della vista
      */
     protected function showHome($vd) {
-        $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
+        $user = userFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
         switch ($user->getRuolo()) {
             case User::Utente:
                 $this->showHomeUtente($vd);
@@ -157,7 +157,7 @@ class BaseController {
     protected function login($vd, $username, $password) {
         // carichiamo i dati dell'utente
 
-        $user = UserFactory::instance()->caricaUtente($username, $password);
+        $user = userFactory::instance()->caricaUtente($username, $password);
         if (isset($user) && $user->esiste()) {
             // utente autenticato
             $_SESSION[self::user] = $user->getId();

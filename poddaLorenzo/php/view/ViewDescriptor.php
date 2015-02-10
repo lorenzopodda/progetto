@@ -55,6 +55,9 @@ class ViewDescriptor {
      * @var string 
      */
     private $pagina;
+    
+    
+    private $sottoPagina;
     /**
      * Sottopagina della vista corrente (una per funzionalita' da supportare)
      * (le funzionalita' sono divise in due categorie: 
@@ -185,6 +188,14 @@ class ViewDescriptor {
         $this->pagina = $pagina;
     }
     
+    public function getSottoPagina() {
+        return $this->sottoPagina;
+    }
+
+    
+    public function setSottoPagina($sottoPagina) {
+        $this->sottoPagina = $sottoPagina;
+    }
     /**
      * Aggiunge uno script alla pagina
      * @param String $nome

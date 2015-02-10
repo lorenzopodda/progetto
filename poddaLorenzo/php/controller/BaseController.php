@@ -52,7 +52,7 @@ class BaseController {
                     $this->login($vd, $username, $password);
                     // questa variabile viene poi utilizzata dalla vista
                     if ($this->loggedIn())
-                        $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
+                        $user = userFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
                     break;
                 
                 default : $this->showLoginPage();

@@ -216,8 +216,8 @@ class User {
      * Restituisce un identificatore unico per l'utente
      * @return int
      */
-    public function getIdUtente(){
-        return $this->idUtente;
+    public function getId(){
+        return $this->id;
     }
     
     /**

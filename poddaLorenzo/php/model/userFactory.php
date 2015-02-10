@@ -172,35 +172,45 @@ class UserFactory {
             default: return null;
         }
     }
-    /**
-     * Salva i dati relativi ad un utente sul db
-     * @param User $user
-     * @return il numero di righe modificate
+   
+     /**
+     * Crea un utente da una riga del db
+     * @param type $row
+     * @return \Studente
      */
-    public function salva(User $user) {
-        $mysqli = Db::getInstance()->connectDb();
-        if (!isset($mysqli)) {
-            error_log("[salva] impossibile inizializzare il database");
-            $mysqli->close();
-            return 0;
-        }
-
-        $stmt = $mysqli->stmt_init();
-        $count = 0;
-        switch ($user->getRuolo()) {
-            case User::Studente:
-                $count = $this->salvaStudente($user, $stmt);
-                break;
-            case User::Docente:
-                $count = $this->salvaDocente($user, $stmt);
-        }
-
-        $stmt->close();
-        $mysqli->close();
-        return $count;
+    public function creaUtenteDaArray($row) {
+        $utente = new Utente();
+        $utente->setId($row['utente_id']);
+        $utente->setUsername($row['utente_username']);
+        $utente->setPassword($row['utente_password']);
+        $utente->setNome($row['utente_nome']);
+        $utente->setCognome($row['utente_cognome']);
+        $utente->setIndirizzo($row['utente_indirizzo']);
+        $utente->setEmail($row['utente_email']);
+        $utente->setCredito($row['utente_credito']);
+        $utente->setRuolo(User::Utente);
+        
+        return $utente;
+        
     }
-    
-    
+
+    /**
+     * Crea un venditore da una riga del db
+     * @param type $row
+     * @return \Docente
+     */
+    public function creaVenditoreDaArray($row) {
+        $venditore = new Docente();
+        $venditore ->setId($row['venditore_id']);
+        $venditore ->setUsername($row['venditore_username']);
+        $venditore ->setPassword($row['venditore_password']);
+        $venditore ->setNome($row['venditore_nome']);
+        $venditore ->setCognome($row['venditore_cognome']);
+        $venditore ->setEmail($row['venditore_email']);
+        $venditore ->setRuolo(User::Venditore);
+        
+        return $venditore ;
+    }
     
     /**
      * Carica un docente eseguendo un prepared statement

@@ -33,7 +33,7 @@ class FrontController {
                     break;
 
                 // studente
-                case 'utente':
+                case 'Utente':
                     // la pagina degli utenti e' accessibile solo agli utenti
                     
                     // il controllo viene fatto dal controller apposito
@@ -46,7 +46,7 @@ class FrontController {
                     break;
 
                 // docente
-                case 'venditore':
+                case 'Venditore':
                     // la pagina del venditore e' accessibile solo al venditore
                     
                     // il controllo viene fatto dal controller apposito

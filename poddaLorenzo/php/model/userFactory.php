@@ -200,6 +200,8 @@ class UserFactory {
         return $count;
     }
     
+    
+    
     /**
      * Carica un docente eseguendo un prepared statement
      * @param mysqli_stmt $stmt
@@ -251,7 +253,14 @@ class UserFactory {
 
         $row = array();
         $bind = $stmt->bind_result(
-                $row['utente_id'], $row['utente_username'], $row['utente_password'], $row['utente_nome'], $row['utente_cognome'], $row['utente_indirizzo'], $row['studenti_email'], $row['studenti_credito']);
+                $row['utente_id'], 
+                $row['utente_username'], 
+                $row['utente_password'], 
+                $row['utente_nome'], 
+                $row['utente_cognome'], 
+                $row['utente_indirizzo'], 
+                $row['studenti_email'], 
+                $row['studenti_credito']);
         if (!$bind) {
             error_log("[caricaUtenteDaStmt] impossibile" .
                     " effettuare il binding in output");

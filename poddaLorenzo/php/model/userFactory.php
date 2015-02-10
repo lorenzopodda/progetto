@@ -199,7 +199,73 @@ class UserFactory {
         $mysqli->close();
         return $count;
     }
+    
+    /**
+     * Carica un docente eseguendo un prepared statement
+     * @param mysqli_stmt $stmt
+     * @return null
+     */
+    private function caricaVenditoreDaStmt(mysqli_stmt $stmt) {
 
+        if (!$stmt->execute()) {
+            error_log("[caricaVenditoreDaStmt] impossibile" .
+                    " eseguire lo statement");
+            return null;
+        }
+
+        $row = array();
+        $bind = $stmt->bind_result(
+                $row['venditore_id'], 
+                $row['venditore_usename'], 
+                $row['venditore_password'], 
+                $row['venditore_nome'], 
+                $row['venditore_cognome'],
+                $row['venditore_email']);
+        if (!$bind) {
+            error_log("[caricaVenditoreDaStmt] impossibile" .
+                    " effettuare il binding in output");
+            return null;
+        }
+
+        if (!$stmt->fetch()) {
+            return null;
+        }
+
+        $stmt->close();
+
+        return self::creaVenditoreDaArray($row);
+    }
+    
+    /**
+     * Carica uno studente eseguendo un prepared statement
+     * @param mysqli_stmt $stmt
+     * @return null
+     */
+    private function caricaUtenteDaStmt(mysqli_stmt $stmt) {
+
+        if (!$stmt->execute()) {
+            error_log("[caricaUtenteDaStmt] impossibile" .
+                    " eseguire lo statement");
+            return null;
+        }
+
+        $row = array();
+        $bind = $stmt->bind_result(
+                $row['utente_id'], $row['utente_username'], $row['utente_password'], $row['utente_nome'], $row['utente_cognome'], $row['utente_indirizzo'], $row['studenti_email'], $row['studenti_credito']);
+        if (!$bind) {
+            error_log("[caricaUtenteDaStmt] impossibile" .
+                    " effettuare il binding in output");
+            return null;
+        }
+
+        if (!$stmt->fetch()) {
+            return null;
+        }
+
+        $stmt->close();
+
+        return self::creaUtenteDaArray($row);
+    }
 
 }
 

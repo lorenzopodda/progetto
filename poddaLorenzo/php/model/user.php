@@ -60,11 +60,7 @@ class User {
     private $email;
     
     
-    /**
-     * Via dell'abitazione dell'utente
-     * @var string
-     */
-    private $indirizzo;
+   
     
    
     
@@ -214,23 +210,7 @@ class User {
         return true;
     }
 
-    /**
-     * Restituisce l'indirizzo dell'utente
-     * @return string
-     */
-    public function getIndirizzo() {
-        return $this->indirizzo;
-    }
-    /**
-     * Imposta l'indirizzo dell'utente
-     * @param string $indirizzo
-     * @return boolean true se l'indirizzo e' stato impostato correttamente,
-     * false altrimenti
-     */
-    public function setIndirizzo($indirizzo) {
-        $this->indirizzo = $indirizzo;
-        return true;
-    }
+    
     
      /**
      * Restituisce un identificatore unico per l'utente

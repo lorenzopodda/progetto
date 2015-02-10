@@ -63,7 +63,7 @@ class BaseController {
                 // questa variabile viene poi utilizzata dalla vista
                 $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
 
-                $this->showHome($vd);
+                $this->showHomeUtente($vd);
             } else {
                 // utente non autenticato
                 $this->showLoginPage($vd);

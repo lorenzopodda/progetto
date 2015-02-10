@@ -200,7 +200,7 @@ class UserFactory {
      * @return \Docente
      */
     public function creaVenditoreDaArray($row) {
-        $venditore = new Docente();
+        $venditore = new Venditore();
         $venditore ->setId($row['venditore_id']);
         $venditore ->setUsername($row['venditore_username']);
         $venditore ->setPassword($row['venditore_password']);
@@ -220,7 +220,7 @@ class UserFactory {
     private function caricaVenditoreDaStmt(mysqli_stmt $stmt) {
 
         if (!$stmt->execute()) {
-            error_log("[caricaVenditoreDaStmt] impossibile" .
+            error_log("[caricaVenditoreDaStmt] impossibile".
                     " eseguire lo statement");
             return null;
         }

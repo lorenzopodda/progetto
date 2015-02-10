@@ -8,7 +8,7 @@ include_once 'utente.php';
  * Classe per la creazione degli utenti del sistema
 
  */
-class UserFactory {
+class userFactory {
 
     private static $singleton;
 

@@ -63,7 +63,7 @@ class FrontController {
                     break;
             }
         } else {
-            self::write403();
+            self::write404();
         }
     }
 

@@ -172,6 +172,34 @@ class UserFactory {
             default: return null;
         }
     }
+    /**
+     * Salva i dati relativi ad un utente sul db
+     * @param User $user
+     * @return il numero di righe modificate
+     */
+    public function salva(User $user) {
+        $mysqli = Db::getInstance()->connectDb();
+        if (!isset($mysqli)) {
+            error_log("[salva] impossibile inizializzare il database");
+            $mysqli->close();
+            return 0;
+        }
+
+        $stmt = $mysqli->stmt_init();
+        $count = 0;
+        switch ($user->getRuolo()) {
+            case User::Studente:
+                $count = $this->salvaStudente($user, $stmt);
+                break;
+            case User::Docente:
+                $count = $this->salvaDocente($user, $stmt);
+        }
+
+        $stmt->close();
+        $mysqli->close();
+        return $count;
+    }
+
 
 }
 

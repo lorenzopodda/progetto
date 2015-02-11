@@ -59,7 +59,7 @@ class StudenteController extends BaseController {
 
                     // visualizza libri disponibili all'acquisto
                     case 'acquisti':
-                        $vd->setPagina('acquisti');
+                        $vd->setContentFile('acquisti');
                         break;
 
                     /**visualizzazione contenuto carrello
@@ -71,7 +71,7 @@ class StudenteController extends BaseController {
                     
                     default:
 
-                        $vd->setPagina('home');
+                        $vd->setContentFile('home');
                         break;
                 }
             }

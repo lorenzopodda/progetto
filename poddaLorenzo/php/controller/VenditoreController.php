@@ -51,23 +51,23 @@ class VenditoreController extends BaseController {
                     // pagina iniziale sezione venditore
                     case 'venditore':
                         
-                        $vd->setPagina('venditore');
+                        $vd->setContentFile('venditore');
                         break;
 
                     // inserimento nuovi libri
                     case 'inserisci':
                         
-                        $vd->setPagina('inserisci');
+                        $vd->setContentFile('inserisci');
                         break;
 	
 		    //cancellare libri
 		    case 'cancella':
                         
-                        $vd->setPagina('cancella');
+                        $vd->setContentFile('cancella');
                         break;
 
                     default:
-                        $vd->setPagina('home');
+                        $vd->setContentFile('home');
                         break;
                 }
             }

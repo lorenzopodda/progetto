@@ -67,7 +67,7 @@ class VenditoreController extends BaseController {
                         break;
 
                     default:
-                        $vd->setSottoPagina('home');
+                        $vd->setContentFile('home');
                         break;
                 }
             }

@@ -228,24 +228,6 @@ class ViewDescriptor {
     }
     
     
-    public function scriviToken($pre = '', $method = self::get) {
-        $imp = BaseController::impersonato;
-        switch ($method) {
-            case self::get:
-                if (isset($this->impToken)) {
-                    // nel caso della 
-                    return $pre . "$imp=$this->impToken";
-                }
-                break;
-
-            case self::post:
-                if (isset($this->impToken)) {
-                    return "<input type=\"hidden\" name=\"$imp\" value=\"$this->impToken\"/>";
-                }
-                break;
-        }
-
-        return '';
-    }
+    
 }
 ?>

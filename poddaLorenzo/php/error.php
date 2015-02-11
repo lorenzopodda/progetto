@@ -10,7 +10,7 @@ include_once 'Settings.php';
     </head>
     <body>
         <h1><?= $titolo ?></h1>
-        <p>perchèèèèè
+        <p>
             <?=
             $messaggio
             ?>

@@ -162,7 +162,7 @@ class BaseController {
             // utente autenticato
             $_SESSION[self::user] = $user->getId();
             $_SESSION[self::role] = $user->getRuolo();
-            $this->showHomeUtente($vd);
+            $this->showHome($vd);
         } else {
             $vd->setMessaggioErrore("Utente sconosciuto o password errata");
             $this->showLoginPage($vd);

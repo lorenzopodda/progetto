@@ -32,7 +32,7 @@ class FrontController {
                     $controller->handleInput($request);
                     break;
 
-                // studente
+                // utente
                 case 'Utente':
                     // la pagina degli utenti e' accessibile solo agli utenti
                     
@@ -45,7 +45,7 @@ class FrontController {
                     $controller->handleInput($request);
                     break;
 
-                // docente
+                // venditore
                 case 'Venditore':
                     // la pagina del venditore e' accessibile solo al venditore
                     

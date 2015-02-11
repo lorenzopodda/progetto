@@ -89,7 +89,7 @@ class VenditoreController extends BaseController {
                 // nessun comando
                 $user = userFactory::instance()->cercaUtentePerId(
                                 $_SESSION[BaseController::user], $_SESSION[BaseController::role]);
-                $this->showHomeUtente($vd);
+                $this->showHome($vd);
             }
 }
      

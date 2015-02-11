@@ -176,7 +176,7 @@ class userFactory {
      /**
      * Crea un utente da una riga del db
      * @param type $row
-     * @return \Studente
+     * @return \Utente
      */
     public function creaUtenteDaArray($row) {
         $utente = new Utente();
@@ -197,7 +197,7 @@ class userFactory {
     /**
      * Crea un venditore da una riga del db
      * @param type $row
-     * @return \Docente
+     * @return \Venditore
      */
     public function creaVenditoreDaArray($row) {
         $venditore = new Venditore();

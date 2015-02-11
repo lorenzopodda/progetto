@@ -71,7 +71,7 @@ class StudenteController extends BaseController {
                     
                     default:
 
-                        $vd->setSottoPagina('home');
+                        $vd->setContentFile('home');
                         break;
                 }
             }

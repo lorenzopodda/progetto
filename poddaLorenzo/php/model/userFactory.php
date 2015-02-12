@@ -3,7 +3,7 @@
 include_once 'user.php';
 include_once 'venditore.php';
 include_once 'utente.php';
-
+include_once 'Db.php';
 /**
  * Classe per la creazione degli utenti del sistema
 

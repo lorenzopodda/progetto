@@ -7,10 +7,10 @@
 			<form action="post" method="login">
                         <input type="hidden" name="cmd" value="login"/>
 			<label for="user">Username</label>
-			<input type="text" name="user" id="user" value=""/>
+			<input type="text" name="user" id="username" value=""/>
 			<br />
 			<label for="pswd">Password</label>
-			<input type="password" name="pswd "id="pswd" value="" />
+			<input type="password" name="pswd "id="password" value="" />
 			<br />
 			<button type="submit">Login</button>
 			</form>

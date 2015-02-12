@@ -2,7 +2,6 @@
 
 /**
  * Struttura dati per popolare la vista generica master.php
- *
  */
 class ViewDescriptor {
     /**
@@ -58,13 +57,7 @@ class ViewDescriptor {
     
     
     private $sottoPagina;
-    /**
-     * Sottopagina della vista corrente (una per funzionalita' da supportare)
-     * (le funzionalita' sono divise in due categorie: 
-     *  utente e venditore, corrispondenti alle sottocartelle 
-     * di view nel progetto)
-     * @var string 
-     */
+    
      
     private $impToken;
 

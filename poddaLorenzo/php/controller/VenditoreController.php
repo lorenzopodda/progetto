@@ -39,13 +39,8 @@ class VenditoreController extends BaseController {
             $user = userFactory::instance()->cercaUtentePerId(
                     $_SESSION[BaseController::user], $_SESSION[BaseController::role]);
 
-            // verifico quale sia la sottopagina della categoria
-            // Docente da servire ed imposto il descrittore 
-            // della vista per caricare i "pezzi" delle pagine corretti
-            // tutte le variabili che vengono create senza essere utilizzate 
-            // direttamente in questo switch, sono quelle che vengono poi lette
-            // dalla vista, ed utilizzano le classi del modello
-            if (isset($request["subpage"])) {
+            // verifico quale sia la sottopagina della categoria venditore
+           
                 switch ($request["subpage"]) {
 
                     // pagina iniziale sezione venditore
@@ -71,7 +66,7 @@ class VenditoreController extends BaseController {
                         break;
                 }
             }
-        }
+        
 
             // gestione dei comandi inviati dal venditore
             if (isset($request["cmd"])) {

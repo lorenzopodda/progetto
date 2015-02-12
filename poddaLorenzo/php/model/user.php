@@ -91,8 +91,6 @@ class User {
 
     /**
      * Imposta lo username per l'autenticazione dell'utente. 
-     * I nomi che si ritengono validi contengono solo lettere maiuscole e minuscole.
-     * La lunghezza del nome deve essere superiore a 5
      * @param string $username
      * @return boolean true se lo username e' ammissibile ed e' stato impostato,
      * false altrimenti
@@ -117,9 +115,6 @@ class User {
 
     /**
      * Imposta la password per l'utente corrente
-     * @param string $password
-     * @return boolean true se la password e' stata impostata correttamente,
-     * false altrimenti
      */
     public function setPassword($password) {
         $this->password = $password;

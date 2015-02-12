@@ -11,7 +11,6 @@ FrontController::dispatch($_REQUEST);
 
 /**
  * Classe che controlla il punto unico di accesso all'applicazione
- 
  */
 class FrontController {
 

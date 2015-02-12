@@ -213,7 +213,7 @@ class userFactory {
     }
     
     /**
-     * Carica un docente eseguendo un prepared statement
+     * Carica un venditore eseguendo un prepared statement
      * @param mysqli_stmt $stmt
      * @return null
      */
@@ -249,7 +249,7 @@ class userFactory {
     }
     
     /**
-     * Carica uno studente eseguendo un prepared statement
+     * Carica uno utente eseguendo un prepared statement
      * @param mysqli_stmt $stmt
      * @return null
      */

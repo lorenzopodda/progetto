@@ -8,7 +8,6 @@ include_once basename(__DIR__) . '/../model/userFactory.php';
  * Controller che gestisce gli utenti non autenticati, 
  * fornendo le funzionalita' comuni anche agli altri controller
  *
- * @author Davide Spano
  */
 class BaseController {
 

@@ -5,8 +5,6 @@ include_once 'libro.php';
 
 /**
  * Rappresenta un acquisto di un libro da parte di un utente
- *
-
  */
 class Acquista {
 	
@@ -35,7 +33,7 @@ class Acquista {
 
 	/**
      * Restituisce l'indentificatore dell'acquisto
-     * @return int
+     
      */
     public function getNumeroAcquisto() {
         return $this->numeroAcquisto;
@@ -43,9 +41,6 @@ class Acquista {
 
     /**
      * Modifica il valore dell'identificatore 
-     * @param int $id il nuovo id per l'acquisto
-     * @return boolean true se il valore e' stato modificato, 
-     *                 false altrimenti
      */
     public function setNumeroAcquisto($numeroAcquisto) {
         $intVal = filter_var($numeroAcquisto, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);

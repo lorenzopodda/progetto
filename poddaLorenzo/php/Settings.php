@@ -7,7 +7,7 @@ class Settings {
     public static $db_host = 'spano.sc.unica.it';
     public static $db_user = 'lorenzoPodda';
     public static $db_password = 'ippopotamo969';
-    public static $db_name='amm14_lorenzoPodda';
+    public static $db_name='libreria';
     
     private static $appPath;
 

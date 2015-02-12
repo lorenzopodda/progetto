@@ -13,7 +13,7 @@
 			<input type="password" name="password "id="password" value="" />
 			<br />
                         <input type="submit" value="Login"/>
-			<!--<button type="submit">Login</button>-->
+			
 			</form>
 		</div>
 			

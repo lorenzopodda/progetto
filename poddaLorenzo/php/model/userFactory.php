@@ -67,12 +67,12 @@ class userFactory {
             return null;
         }
 
-        if (!$stmt->bind_param('ss',$username, $password)) {
+       /* if (!$stmt->bind_param('ss',$username, $password)) {
             error_log("[loadUser] impossibile" .
                     " effettuare il binding in input");
             $mysqli->close();
             return null;
-        }
+        }*/
 
         $utente = self::caricaUtenteDaStmt($stmt);
         if (isset($utente)) {
@@ -103,12 +103,12 @@ class userFactory {
             return null;
         }
 
-        if (!$stmt->bind_param('ss', $username, $password)) {
+       /* if (!$stmt->bind_param('ss', $username, $password)) {
             error_log("[loadUser] impossibile" .
                     " effettuare il binding in input");
             $mysqli->close();
             return null;
-        }
+        }*/
 
         $venditore = self::caricaVenditoreDaStmt($stmt);
         if (isset($venditore)) {
@@ -155,12 +155,12 @@ class userFactory {
                     return null;
                 }
 
-                if (!$stmt->bind_param('i', $intval)) {
+               /* if (!$stmt->bind_param('i', $intval)) {
                     error_log("[cercaUtentePerId] impossibile" .
                             " effettuare il binding in input");
                     $mysqli->close();
                     return null;
-                }
+                }*/
 
                 return self::caricaUtenteDaStmt($stmt);
                 break;
@@ -183,12 +183,12 @@ class userFactory {
                     return null;
                 }
 
-                if (!$stmt->bind_param('i', $intval)) {
+                /*if (!$stmt->bind_param('i', $intval)) {
                     error_log("[loadUser] impossibile" .
                             " effettuare il binding in input");
                     $mysqli->close();
                     return null;
-                }
+                }*/
 
                 $toRet =  self::caricaVenditoreDaStmt($stmt);
                 $mysqli->close();

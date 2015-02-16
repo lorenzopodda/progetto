@@ -67,12 +67,12 @@ class userFactory {
             return null;
         }
 
-       /* if (!$stmt->bind_param('ss',$username, $password)) {
+       if (!$stmt->bind_param('ss',$username, $password)) {
             error_log("[loadUser] impossibile" .
                     " effettuare il binding in input");
             $mysqli->close();
             return null;
-        }*/
+        }
 
         $utente = self::caricaUtenteDaStmt($stmt);
         if (isset($utente)) {
@@ -103,12 +103,12 @@ class userFactory {
             return null;
         }
 
-       /* if (!$stmt->bind_param('ss', $username, $password)) {
+        if (!$stmt->bind_param('ss', $username, $password)) {
             error_log("[loadUser] impossibile" .
                     " effettuare il binding in input");
             $mysqli->close();
             return null;
-        }*/
+        }
 
         $venditore = self::caricaVenditoreDaStmt($stmt);
         if (isset($venditore)) {
@@ -155,12 +155,12 @@ class userFactory {
                     return null;
                 }
 
-               /* if (!$stmt->bind_param('i', $intval)) {
+                if (!$stmt->bind_param('i', $intval)) {
                     error_log("[cercaUtentePerId] impossibile" .
                             " effettuare il binding in input");
                     $mysqli->close();
                     return null;
-                }*/
+                }
 
                 return self::caricaUtenteDaStmt($stmt);
                 break;
@@ -183,12 +183,12 @@ class userFactory {
                     return null;
                 }
 
-                /*if (!$stmt->bind_param('i', $intval)) {
+                if (!$stmt->bind_param('i', $intval)) {
                     error_log("[loadUser] impossibile" .
                             " effettuare il binding in input");
                     $mysqli->close();
                     return null;
-                }*/
+                }
 
                 $toRet =  self::caricaVenditoreDaStmt($stmt);
                 $mysqli->close();
@@ -245,11 +245,11 @@ class userFactory {
      */
     private function caricaVenditoreDaStmt(mysqli_stmt $stmt) {
 
-       /* if (!$stmt->execute()) {
+        if (!$stmt->execute()) {
             error_log("[caricaVenditoreDaStmt] impossibile".
                     " eseguire lo statement");
             return null;
-        }*/
+        }
 
         $row = array();
         $bind = $stmt->bind_result(
@@ -281,11 +281,11 @@ class userFactory {
      */
     private function caricaUtenteDaStmt(mysqli_stmt $stmt) {
 
-        /*if (!$stmt->execute()) {
+        if (!$stmt->execute()) {
             error_log("[caricaUtenteDaStmt] impossibile" .
                     " eseguire lo statement");
             return null;
-        }*/
+        }
 
         $row = array();
         $bind = $stmt->bind_result(

@@ -1,7 +1,7 @@
 <?php
 
 include_once 'libro.php';
-
+include_once 'Db.php';
 
 /**
  * Classe per la creazione dei libri

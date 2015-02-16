@@ -245,11 +245,11 @@ class userFactory {
      */
     private function caricaVenditoreDaStmt(mysqli_stmt $stmt) {
 
-        if (!$stmt->execute()) {
+       /* if (!$stmt->execute()) {
             error_log("[caricaVenditoreDaStmt] impossibile".
                     " eseguire lo statement");
             return null;
-        }
+        }*/
 
         $row = array();
         $bind = $stmt->bind_result(
@@ -281,11 +281,11 @@ class userFactory {
      */
     private function caricaUtenteDaStmt(mysqli_stmt $stmt) {
 
-        if (!$stmt->execute()) {
+        /*if (!$stmt->execute()) {
             error_log("[caricaUtenteDaStmt] impossibile" .
                     " eseguire lo statement");
             return null;
-        }
+        }*/
 
         $row = array();
         $bind = $stmt->bind_result(

@@ -1,6 +1,6 @@
 <div id="sezioni">
-	<li><a href="../php/view/venditore/venditore.php">Venditore</a></li>
-	<li><a href="../php/view/venditore/inserisci.php">Inserisci</a></li>
+	<li class=" <?= strpos($vd->getContentFile(),'venditore') !== false || $vd->getContentFile() == null ? 'current_page_item' : ''?>"><a href="../php/view/venditore/venditore.php">Venditore</a></li>
+	<li class=" <?= strpos($vd->getContentFile(),'inserisci') !== false || $vd->getContentFile() == null ? 'current_page_item' : ''?>"><a href="../php/view/venditore/inserisci.php">Inserisci</a></li>
 	<li><a href="#">Cancella</a></li>
 	
 </div>

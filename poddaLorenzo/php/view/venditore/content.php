@@ -1,15 +1,15 @@
 <?php
 switch ($vd->getContentFile()) {
     case 'venditore':
-        include_once 'venditore.php';
+        include 'venditore.php';
         break;
 
     case 'inserisci':
-        include_once 'inserisci.php';
+        include 'inserisci.php';
         break;
 
     case 'cancella':
-        include_once 'cancella.php';
+        include 'cancella.php';
         break;
     ?>
     <?php default: ?>

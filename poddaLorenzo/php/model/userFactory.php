@@ -48,7 +48,7 @@ class userFactory {
         
         $query = "select *
             
-            from amm14_lorenzoPodda.utente 
+            from utente 
             
             where utente.Username = ? and utente.PW = ?";
         $stmt = $mysqli->stmt_init();

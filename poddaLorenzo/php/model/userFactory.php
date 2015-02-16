@@ -46,7 +46,14 @@ class userFactory {
 
         // cerco prima nella tabella utente
         
-        $query = "select *
+        $query = "select utente.IdUtente utente_id,
+                            utente.Username utente_username,
+                            utente.PW utente_password,
+                            utente.Nome utente_nome,
+                            utente.Cognome utente_cognome,
+                            utente.Indirizzo utente_indirizzo,
+                            utente.email utente_email,
+                            utente.credito utente_credito
             
             from utente 
             
@@ -77,9 +84,14 @@ class userFactory {
 	
 
         // ora cerco un venditore
-        $query = "select *
+        $query = "select venditore.IdVenditore venditore_id,
+                         venditore.Username venditore_username,
+                         venditore.PW venditore_password,
+                         venditore.Nome venditore_nome,
+                         venditore.Cognome venditore_cognome,
+                         venditore.Email venditore_email
                
-               from amm14_lorenzoPodda.venditore 
+               from venditore 
                where vendtitore.Username = ? and venditore.PW = ?";
 
         $stmt = $mysqli->stmt_init();
@@ -125,7 +137,15 @@ class userFactory {
 
         switch ($role) {
             case User::Utente:
-                $query = "select * from amm14_lorenzoPodda.utente where IdUtente = ?";
+                $query = "select utente.IdUtente utente_id,
+                            utente.Username utente_username,
+                            utente.PW utente_password,
+                            utente.Nome utente_nome,
+                            utente.Cognome utente_cognome,
+                            utente.Indirizzo utente_indirizzo,
+                            utente.email utente_email,
+                            utente.credito utente_credito
+                            from utente where utente.IdUtente = ?";
                 $stmt = $mysqli->stmt_init();
                 $stmt->prepare($query);
                 if (!$stmt) {
@@ -146,7 +166,13 @@ class userFactory {
                 break;
 
             case User::Venditore:
-                $query = "select * from amm14_lorenzoPodda.venditore where IdVenditore = ?";
+                $query = "select venditore.IdVenditore venditore_id,
+                         venditore.Username venditore_username,
+                         venditore.PW venditore_password,
+                         venditore.Nome venditore_nome,
+                         venditore.Cognome venditore_cognome,
+                         venditore.Email venditore_email 
+                         from venditore where venditore.IdVenditore = ?";
 
                 $stmt = $mysqli->stmt_init();
                 $stmt->prepare($query);

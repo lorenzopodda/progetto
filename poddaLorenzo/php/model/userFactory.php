@@ -67,7 +67,7 @@ class userFactory {
             return null;
         }
 
-       if ($stmt->bind_param('ss',$username, $password)) {
+       if (!$stmt->bind_param('ss',$username, $password)) {
             error_log("[loadUser] impossibile" .
                     " effettuare il binding in input");
             $mysqli->close();

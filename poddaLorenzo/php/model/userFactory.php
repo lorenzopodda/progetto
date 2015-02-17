@@ -60,18 +60,9 @@ class userFactory {
             where utente.Username = ? and utente.PW = ?";
         $stmt = $mysqli->stmt_init();
         $stmt->prepare($query);
-        if (!$stmt) {
-            error_log("[loadUser] impossibile" .
-                    " inizializzare il prepared statement");
-            $mysqli->close();
-            return null;
-        }
+       
 
-       if (!$stmt->bind_param('ss',$username, $password)) {
-            error_log("[loadUser] impossibile effettuare il binding in input");
-            $mysqli->close();
-            return null;
-        }
+       $stmt-> bind_param('ss',$username, $password);
 
         $utente = self::caricaUtenteDaStmt($stmt);
         if (isset($utente)) {
@@ -95,19 +86,9 @@ class userFactory {
 
         $stmt = $mysqli->stmt_init();
         $stmt->prepare($query);
-        if (!$stmt) {
-            error_log("[loadUser] impossibile" .
-                    " inizializzare il prepared statement");
-            $mysqli->close();
-            return null;
-        }
+        
 
-        if (!$stmt->bind_param('ss', $username, $password)) {
-            error_log("[loadUser] impossibile" .
-                    " effettuare il binding in input");
-            $mysqli->close();
-            return null;
-        }
+        $stmt->bind_param('ss', $username, $password);
 
         $venditore = self::caricaVenditoreDaStmt($stmt);
         if (isset($venditore)) {

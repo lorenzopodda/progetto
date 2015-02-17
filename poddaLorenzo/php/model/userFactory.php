@@ -57,7 +57,7 @@ class userFactory {
             
             from utente 
             
-            where utente.Username = $username and utente.PW = $password";
+            where utente.Username = ? and utente.PW = ?";
         $stmt = $mysqli->stmt_init();
         $stmt->prepare($query);
         if (!$stmt) {

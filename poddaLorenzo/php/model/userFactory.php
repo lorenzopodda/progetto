@@ -53,7 +53,7 @@ class userFactory {
                             utente.Cognome utente_cognome,
                             utente.Indirizzo utente_indirizzo,
                             utente.email utente_email,
-                            utente.credito utente_credito
+                            utente.Credito utente_credito
             
             from utente 
             

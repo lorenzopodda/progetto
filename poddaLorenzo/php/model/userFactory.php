@@ -62,7 +62,7 @@ class userFactory {
         $stmt->prepare($query);
         
 
-       $stmt->bind_param('ss',$username, $password);
+       $stmt->bind_param("ss",$username, $password);
 
         $utente = self::caricaUtenteDaStmt($stmt);
         if (isset($utente)) {

@@ -51,13 +51,13 @@ class VenditoreController extends BaseController {
 
                     // inserimento nuovi libri
                     case 'inserisci':
-                        
+                        $libro = libroFactory::instance()->inserisciLibro($user);
                         $vd->setContentFile('inserisci');
                         break;
 	
 		    //cancellare libri
 		    case 'cancella':
-                        
+                        $libro = libroFactory::instance()->cancellaLibro($user);
                         $vd->setContentFile('cancella');
                         break;
 

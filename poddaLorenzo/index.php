@@ -70,22 +70,22 @@
     </ul>
 
     <h2>Accesso al progetto</h2>
-    <p>Likn per accesso al progetto:<a href="html/home.html">http://localhost/progetto/poddaLorenzo/html/home.html</a></p>
+    <p>Likn per accesso al progetto:<a href="html/home.html">http://spano.sc.unica.it/amm2014/lorenzoPodda/poddaLorenzo/html/home.html</a></p>
     <p>Si pu&ograve; accedere alla applicazione con le seguenti credenziali</p>
     <ul>
         <li>Ruolo venditore:</li>
         <ul>
-            <li>username: venditore</li>
-            <li>password: venditore</li>
+            <li>username: Venditore</li>
+            <li>password: Venditore</li>
         </ul>
         <li>Ruolo acquirente:</li>
         <ul>
-            <li>username: acquirente1</li>
-            <li>password: acquirente1</li>
+            <li>username: Utente1</li>
+            <li>password: Utente1</li>
         </ul>
 	<ul>
-            <li>username: acquirente2</li>
-            <li>password: acquirente2</li>
+            <li>username: Utente2</li>
+            <li>password: Utente2</li>
         </ul>
     </ul>
 </body>

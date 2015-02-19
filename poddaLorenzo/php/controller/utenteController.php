@@ -50,8 +50,8 @@ class StudenteController extends BaseController {
 
             // verifico quale sia la sottopagina della categoria utente
            
-            if (isset($request["subpage"])) {
-                switch ($request["subpage"]) {
+            if (isset($request["page"])) {
+                switch ($request["page"]) {
 
                     // visualizza libri disponibili all'acquisto
                     case 'acquisti':

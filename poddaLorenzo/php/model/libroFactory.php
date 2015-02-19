@@ -35,7 +35,7 @@ class LibroFactory {
      */
     public function &getListaLibri() {
         $libri = array();
-        $query = "select * from libreria.libro";
+        $query = "select IdLibro, Titolo, Prezzo, NomeAutore, CognomeAutore, Genere from Libro";
                
         $mysqli = Db::getInstance()->connectDb();
         if (!isset($mysqli)) {
@@ -81,10 +81,9 @@ class LibroFactory {
             return null;
         }
 
-        $query = "select titolo, annoUscita, numeroCopie, prezzo, autore, nomeGenere from 
-	negozio_online.genere join negozio_online.libro on codGenere=codGen 
-	join negozio_online.autore on codAutore=c0dAut where
-	nomeGenere=? ";
+        $query = "SELECT IdLibro, Titolo, Prezzo, NomeAutore, CognomeAutore, Genere
+                    FROM Libro
+            WHERE Genere = ? ";
         $stmt = $mysqli->stmt_init();
         $stmt->prepare($query);
         if (!$stmt) {

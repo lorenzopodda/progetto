@@ -91,7 +91,7 @@ class userFactory {
                          Venditore.Email venditore_email
                
                from Venditore 
-               where Vendtitore.Username = ? and Venditore.PW = ?";
+               where Venditore.Username = ? and Venditore.PW = ?";
 
         $stmt = $mysqli->stmt_init();
         $stmt->prepare($query);
@@ -143,8 +143,8 @@ class userFactory {
                             Utente.Cognome utente_cognome,
                             Utente.Indirizzo utente_indirizzo,
                             Utente.email utente_email,
-                            Utente.credito utente_credito
-                            from utente where Utente.IdUtente = ?";
+                            Utente.Credito utente_credito
+                            from Utente where Utente.IdUtente = ?";
                 $stmt = $mysqli->stmt_init();
                 $stmt->prepare($query);
                 if (!$stmt) {

@@ -8,11 +8,11 @@
             <tr>
                 <th class="libro-col-small">IdLibro</th>
                 <th class="libro-col-large">Titolo</th>
-                <th class="esami-col-large">nomeAutore</th>
-                <th class="esami-col-large">cognomeAutore</th>
-                <th class="esami-col-small">Genere</th>
-                <th class="esami-col-small">Prezzo</th>
-                <th class="esami-col-large">Acquista</th>
+                <th class="libro-col-large">nomeAutore</th>
+                <th class="libro-col-large">cognomeAutore</th>
+                <th class="libro-col-small">Genere</th>
+                <th class="libro-col-small">Prezzo</th>
+                <th class="libro-col-large">Acquista</th>
             </tr>
         </thead>
         <tbody>
@@ -29,7 +29,7 @@
                     <td><?= $libro->getListaLibri()->getGenere()?></td>
                     <td><?= $libro->getListaLibri()->getPrezzo() ?></td>
                     <td>
-                       <button type="submit">Acquista</button> 
+                       <button type="submit" method="post">Acquista</button> 
                     </td>
                 </tr>
                 <?php

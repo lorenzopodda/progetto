@@ -41,7 +41,7 @@ class VenditoreController extends BaseController {
 
             // verifico quale sia la sottopagina della categoria venditore
            
-                switch ($request["page"]) {
+                switch ($request["subpage"]) {
 
                     // pagina iniziale sezione venditore
                     case 'venditore':

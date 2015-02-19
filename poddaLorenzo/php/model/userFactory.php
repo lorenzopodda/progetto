@@ -46,18 +46,18 @@ class userFactory {
 
         // cerco prima nella tabella utente
         
-        $query = "select utente.IdUtente utente_id,
-                            utente.Username utente_username,
-                            utente.PW utente_password,
-                            utente.Nome utente_nome,
-                            utente.Cognome utente_cognome,
-                            utente.Indirizzo utente_indirizzo,
-                            utente.email utente_email,
-                            utente.Credito utente_credito
+        $query = "select Utente.IdUtente utente_id,
+                            Utente.Username utente_username,
+                            Utente.PW utente_password,
+                            Utente.Nome utente_nome,
+                            Utente.Cognome utente_cognome,
+                            Utente.Indirizzo utente_indirizzo,
+                            Utente.email utente_email,
+                            Utente.Credito utente_credito
             
-            from utente 
+            from Utente 
             
-            where utente.Username=? and utente.PW=?";
+            where Utente.Username=? and Utente.PW=?";
         $stmt = $mysqli->stmt_init();
         $stmt->prepare($query);
         if (!$stmt) {
@@ -83,15 +83,15 @@ class userFactory {
 	
 
         // ora cerco un venditore
-        $query = "select venditore.IdVenditore venditore_id,
-                         venditore.Username venditore_username,
-                         venditore.PW venditore_password,
-                         venditore.Nome venditore_nome,
-                         venditore.Cognome venditore_cognome,
-                         venditore.Email venditore_email
+        $query = "select Venditore.IdVenditore venditore_id,
+                         Venditore.Username venditore_username,
+                         Venditore.PW venditore_password,
+                         Venditore.Nome venditore_nome,
+                         Venditore.Cognome venditore_cognome,
+                         Venditore.Email venditore_email
                
-               from venditore 
-               where vendtitore.Username = ? and venditore.PW = ?";
+               from Venditore 
+               where Vendtitore.Username = ? and Venditore.PW = ?";
 
         $stmt = $mysqli->stmt_init();
         $stmt->prepare($query);
@@ -136,15 +136,15 @@ class userFactory {
 
         switch ($role) {
             case User::Utente:
-                $query = "select utente.IdUtente utente_id,
-                            utente.Username utente_username,
-                            utente.PW utente_password,
-                            utente.Nome utente_nome,
-                            utente.Cognome utente_cognome,
-                            utente.Indirizzo utente_indirizzo,
-                            utente.email utente_email,
-                            utente.credito utente_credito
-                            from utente where utente.IdUtente = ?";
+                $query = "select Utente.IdUtente utente_id,
+                            Utente.Username utente_username,
+                            Utente.PW utente_password,
+                            Utente.Nome utente_nome,
+                            Utente.Cognome utente_cognome,
+                            Utente.Indirizzo utente_indirizzo,
+                            Utente.email utente_email,
+                            Utente.credito utente_credito
+                            from utente where Utente.IdUtente = ?";
                 $stmt = $mysqli->stmt_init();
                 $stmt->prepare($query);
                 if (!$stmt) {
@@ -165,13 +165,13 @@ class userFactory {
                 break;
 
             case User::Venditore:
-                $query = "select venditore.IdVenditore venditore_id,
-                         venditore.Username venditore_username,
-                         venditore.PW venditore_password,
-                         venditore.Nome venditore_nome,
-                         venditore.Cognome venditore_cognome,
-                         venditore.Email venditore_email 
-                         from venditore where venditore.IdVenditore = ?";
+                $query = "select Venditore.IdVenditore venditore_id,
+                         Venditore.Username venditore_username,
+                         Venditore.PW venditore_password,
+                         Venditore.Nome venditore_nome,
+                        Venditore.Cognome venditore_cognome,
+                         Venditore.Email venditore_email 
+                         from Venditore where Venditore.IdVenditore = ?";
 
                 $stmt = $mysqli->stmt_init();
                 $stmt->prepare($query);

@@ -117,63 +117,6 @@ class userFactory {
         }
     }
     
-    
-    /**
-     * Restituisce un array con i venditori presenti nel sistema
-     * @return array
-     */
-    public function &getListaVenditori() {
-        $venditori = array();
-        $query = "select *
-               
-               from Venditore";
-        $mysqli = Db::getInstance()->connectDb();
-        if (!isset($mysqli)) {
-            error_log("[getListaVenditori] impossibile inizializzare il database");
-            $mysqli->close();
-            return $venditori;
-        }
-        $result = $mysqli->query($query);
-        if ($mysqli->errno > 0) {
-            error_log("[getListaVenditori] impossibile eseguire la query");
-            $mysqli->close();
-            return $venditori;
-        }
-
-        while ($row = $result->fetch_array()) {
-            $venditori[] = self::creaVenditoreDaArray($row);
-        }
-
-        $mysqli->close();
-        return $venditori;
-    }
-
-    /**
-     * Restituisce la lista degli studenti presenti nel sistema
-     * @return array
-     */
-    public function &getListaUtenti() {
-        $utenti = array();
-        $query = "select * from Utente";
-        $mysqli = Db::getInstance()->connectDb();
-        if (!isset($mysqli)) {
-            error_log("[getListaUtenti] impossibile inizializzare il database");
-            $mysqli->close();
-            return $utenti;
-        }
-        $result = $mysqli->query($query);
-        if ($mysqli->errno > 0) {
-            error_log("[getListaUtenti] impossibile eseguire la query");
-            $mysqli->close();
-            return $utenti;
-        }
-
-        while ($row = $result->fetch_array()) {
-            $utenti[] = self::creaUtenteDaArray($row);
-        }
-
-        return $utenti;
-    }
     /**
      * Cerca un utente  per id
      * @param int $id

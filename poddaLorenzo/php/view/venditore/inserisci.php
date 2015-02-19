@@ -7,21 +7,21 @@
 <div id="sezione">
 	<p>Inserisci nuovo libro</p>
 	<br/>
-	<form action="post" method="venditore/inserisci<?= $vd->scriviToken('?')?>">
+	<form action="venditore/inserisci<?= $vd->scriviToken('?')?>" method="post">
                                 <label for="user">Titolo</label>
-				<input type="text" name="user" id="titolo" value=""/>
+				<input type="text" name="titolo" id="titolo" value=""/>
 				<br />
 				<label for="user">Prezzo</label>
-				<input type="number" name="user" id="prezzo" value=""/>
+				<input type="number" name="prezzo" id="prezzo" value=""/>
 				<br />
 				<label for="user">NomeAutore</label>
-				<input type="text" name="user" id="nomeAutore" value=""/>
+				<input type="text" name="nomeAutore" id="nomeAutore" value=""/>
 				<br />
 				<label for="user">CognomeAutore</label>
-				<input type="text" name="user" id="cognomeAutore" value=""/>
+				<input type="text" name="cognomeAutore" id="cognomeAutore" value=""/>
 				<br />
 				<label for="user">Genere</label>
-				<input type="text" name="user" id="genere" value=""/>
+				<input type="text" name="genere" id="genere" value=""/>
 				<button type="submit" name="cmd" value="inserisci">Inserisci</button>
 				
 	</form>

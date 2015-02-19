@@ -7,11 +7,12 @@
 <div id="sezione">
 	<p>Cancella libro</p>
 	<br/>
-	<form action="" method="">
+	<form action="venditore/cancella<?= $vd->scriviToken('?')?>" method="post">
+        <input type="hidden" name="cmd" value="cancella"/>
 	<label for="user">Titolo</label>
-	<input type="text" name="user" id="user" value=""/>
+	<input type="text" name="titolo" id="titolo" value=""/>
 	<br />
-	<button type="submit">Cancella</button>
+	<input type="submit" value="Cancella"/>
 				
 	</form>
 </div>

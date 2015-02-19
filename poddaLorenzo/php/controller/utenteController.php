@@ -55,6 +55,7 @@ class StudenteController extends BaseController {
 
                     // visualizza libri disponibili all'acquisto
                     case 'acquisti':
+                        $libro = libroFactory::instance()->getListaLibri($user);
                         $vd->setContentFile('acquisti');
                         break;
 

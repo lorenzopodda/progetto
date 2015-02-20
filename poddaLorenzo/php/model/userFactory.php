@@ -117,6 +117,72 @@ class userFactory {
         }
     }
     
+    
+    public function &getListaUtenti() {
+        $utenti = array();
+        $query = "select Utente.IdUtente utente_id,
+                            Utente.Username utente_username,
+                            Utente.PW utente_password,
+                            Utente.Nome utente_nome,
+                            Utente.Cognome utente_cognome,
+                            Utente.Indirizzo utente_indirizzo,
+                            Utente.email utente_email,
+                            Utente.Credito utente_credito
+                            from Utente";
+        $mysqli = Db::getInstance()->connectDb();
+        if (!isset($mysqli)) {
+            error_log("[getListaDocenti] impossibile inizializzare il database");
+            $mysqli->close();
+            return $utenti;
+        }
+        $result = $mysqli->query($query);
+        if ($mysqli->errno > 0) {
+            error_log("[getListaUtenti] impossibile eseguire la query");
+            $mysqli->close();
+            return $utenti;
+        }
+
+        while ($row = $result->fetch_array()) {
+            $utenti[] = self::creaUtenteDaArray($row);
+        }
+
+        $mysqli->close();
+        return $utenti;
+    }
+
+    /**
+     * Restituisce la lista degli studenti presenti nel sistema
+     * @return array
+     */
+    public function &getListaVenditori() {
+        $venditori = array();
+        $query = "select Venditore.IdVenditore venditore_id,
+                         Venditore.Username venditore_username,
+                         Venditore.PW venditore_password,
+                         Venditore.Nome venditore_nome,
+                        Venditore.Cognome venditore_cognome,
+                         Venditore.Email venditore_email 
+                         from Venditore";
+        $mysqli = Db::getInstance()->connectDb();
+        if (!isset($mysqli)) {
+            error_log("[getListaStudenti] impossibile inizializzare il database");
+            $mysqli->close();
+            return  $venditori;
+        }
+        $result = $mysqli->query($query);
+        if ($mysqli->errno > 0) {
+            error_log("[getListaVenditori] impossibile eseguire la query");
+            $mysqli->close();
+            return  $venditori;
+        }
+
+        while ($row = $result->fetch_array()) {
+             $venditori[] = self::creaVenditoreDaArray($row);
+        }
+
+        return  $venditori;
+    }
+    
     /**
      * Cerca un utente  per id
      * @param int $id

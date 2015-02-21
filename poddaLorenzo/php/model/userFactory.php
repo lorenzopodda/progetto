@@ -117,7 +117,7 @@ class userFactory {
     /**
      * Cerca un utente  per id
      */
-    public function cercaUtentePerId($username, $password, $role) {
+    public function cercaUtentePerId($id, $role) {
         $intval = filter_var($id, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
         if (!isset($intval)) {
             return null;
@@ -139,7 +139,7 @@ class userFactory {
                             Utente.Indirizzo utente_indirizzo,
                             Utente.email utente_email,
                             Utente.Credito utente_credito
-                            from Utente where Utente.Username=? and Utente.PW=?";
+                            from Utente where Utente.IdUtente = ?";
                 $stmt = $mysqli->stmt_init();
                 $stmt->prepare($query);
                 if (!$stmt) {
@@ -166,7 +166,7 @@ class userFactory {
                          Venditore.Nome venditore_nome,
                         Venditore.Cognome venditore_cognome,
                          Venditore.Email venditore_email 
-                         from Venditore where Venditore.Username = ? and Venditore.PW = ?";
+                         from Venditore where Venditore.IdVenditore = ?";
 
                 $stmt = $mysqli->stmt_init();
                 $stmt->prepare($query);

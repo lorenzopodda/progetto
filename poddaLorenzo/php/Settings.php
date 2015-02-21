@@ -13,8 +13,6 @@ class Settings {
 
     /**
      * Restituisce il path relativo nel server corrente dell'applicazione
-     * Lo uso perche' la mia configurazione locale e' ovviamente diversa da quella 
-     * pubblica. Gestisco il problema una volta per tutte in questo script
      */
     public static function getApplicationPath() {
         if (!isset(self::$appPath)) {

@@ -6,57 +6,49 @@
 class User {
 
     /**
-     * Costante che definisce il ruolo docente
+     * Costante che definisce il ruolo venditore
      */
     const Venditore = 1;
     
     /**
-     * Costante che definisce il ruolo studente
+     * Costante che definisce il ruolo utente
      */
     const Utente = 2;
     
-    /**
-     * Identificatore dell'utente
-     * @var int
-     */
+    
+    //Identificatore dell'utente
+     
     private $id;
 
     
-    /**
-     * Username per l'autenticazione
-     * @var string
-     */
+    
+     //Username per l'autenticazione
+     
     private $username;
     
-    /**
-     * Password per l'autenticazione
-     * @var string
-     */
+    
+    //Password per l'autenticazione
+    
     private $password;
     
-    /**
+    /*
      * Il ruolo dell'utente nell'applicazione.
      * Lo utilizzo per implementare il controllo degli accessi
-     * @var int 
      */
     private $ruolo;
 
-    /**
-     * Nome dell'utente
-     * @var string
-     */
+    
+    // Nome dell'utente
     private $nome;
     
-    /**
-     * Cognome dell'utente
-     * @var string 
-     */
+    
+    //Cognome dell'utente
+     
     private $cognome;
     
-    /** 
-     * email dell'utente
-     * @var string
-     */
+     
+    //email dell'utente
+     
     private $email;
     
     
@@ -72,18 +64,16 @@ class User {
         
     }
 
-    /**
-     * Verifica se l'utente esista per il sistema
-     * @return boolean true se l'utente esiste, false altrimenti
-     */
+    
+    //Verifica se l'utente esista per il sistema
+     
     public function esiste() {
-        // implementazione di comodo, va fatto con il db
+        
         return isset($this->ruolo);
     }
 
     /**
      * Restituisce lo username dell'utente
-     * @return string
      */
     public function getUsername() {
         return $this->username;
@@ -91,13 +81,9 @@ class User {
 
     /**
      * Imposta lo username per l'autenticazione dell'utente. 
-     * @param string $username
-     * @return boolean true se lo username e' ammissibile ed e' stato impostato,
-     * false altrimenti
      */
     public function setUsername($username) {
-        // utilizzo la funzione filter var specificando un'espressione regolare
-        // che implementa la validazione personalizzata
+        
         if (!filter_var($username, FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/[a-zA-Z0-9]{5,}/')))) {
             return false;
         }
@@ -107,7 +93,6 @@ class User {
 
     /**
      * Restituisce la password per l'utente corrente
-     * @return string
      */
     public function getPassword() {
         return $this->password;
@@ -123,45 +108,36 @@ class User {
 
     /**
      * Restituisce il nome dell'utente
-     * @return string
      */
     public function getNome() {
         return $this->nome;
     }
 
-    /**
+    /*
      * Imposta il nome dell'utente
-     * @param string $nome
-     * @return boolean true se il nome e' stato impostato correttamente, 
-     * false altrimenti 
      */
     public function setNome($nome) {
         $this->nome = $nome;
         return true;
     }
 
-    /**
+    /*
      * Restituisce il cognome dell'utente
-     * @return string
      */
     public function getCognome() {
         return $this->cognome;
     }
 
-    /**
+    /*
      * Imposta il cognome dell'utente
-     * @param string $cognome
-     * @return boolean true se il cognome e' stato impostato correttamente,
-     * false altrimenti
      */
     public function setCognome($cognome) {
         $this->cognome = $cognome;
         return true;
     }
 
-    /**
+    /*
      * Restituisce un intero 
-     * @return int
      */
     public function getRuolo() {
         return $this->ruolo;
@@ -169,9 +145,6 @@ class User {
 
     /**
      * Imposta un ruolo per un dato utente
-     * @param int $ruolo
-     * @return boolean true se il valore e' ammissibile ed e' stato impostato,
-     * false altrimenti
      */
     public function setRuolo($ruolo) {
         switch ($ruolo) {
@@ -186,7 +159,6 @@ class User {
 
     /**
      * Restituisce l'email dell'utente
-     * @return string
      */
     public function getEmail() {
         return $this->email;
@@ -194,8 +166,6 @@ class User {
 
     /**
      * Imposta una nuova email per l'utente
-     * @param string $email la nuova email dell'utente
-     * @return boolean true il nuovo l
      */
     public function setEmail($email) {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -209,7 +179,6 @@ class User {
     
      /**
      * Restituisce un identificatore unico per l'utente
-     * @return int
      */
     public function getId(){
         return $this->id;
@@ -217,9 +186,6 @@ class User {
     
     /**
      * Imposta un identificatore unico per l'utente
-     * @param int $id
-     * @return boolean true se il valore e' stato aggiornato correttamente,
-     * false altrimenti
      */
     public function setId($id){
         $intVal = filter_var($id, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
@@ -231,9 +197,6 @@ class User {
     
     /**
      * Compara due utenti, verificandone l'uguaglianza logica
-     * @param User $user l'utente con cui comparare $this
-     * @return boolean true se i due oggetti sono logicamente uguali, 
-     * false altrimenti
      */
     public function equals(User $user) {
 

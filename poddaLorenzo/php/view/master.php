@@ -2,7 +2,7 @@
 include_once 'ViewDescriptor.php';
 include_once basename(__DIR__) . '/../Settings.php';
 
-//if (!$vd->isJson()) {
+
     ?>
     <!DOCTYPE html>
     <!-- 
@@ -57,28 +57,13 @@ include_once basename(__DIR__) . '/../Settings.php';
 		<div id=footer>
 			<p>Libreria online, via Flumendosa 14 Cagliari</p>
 			<p> Tel 0485/525255 Fax 0485/525256 </p>
-			<div class="validator">
-                        <p>
-                            <a href="http://validator.w3.org/check/referer" class="xhtml" title="Questa pagina contiene HTML valido">
-                                <abbr title="eXtensible HyperText Markup Language">HTML</abbr> Valido</a>
-                            <a href="http://jigsaw.w3.org/css-validator/check/referer" class="css" title="Questa pagina ha CSS validi">
-                                <abbr title="Cascading Style Sheets">CSS</abbr> Valido</a>
-                        </p>
-                    </div>
+			
 		</div>
             </div>
         </body>
     </html>
     <?php
-/*} else {
 
-    header('Cache-Control: no-cache, must-revalidate');
-    header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
-    header('Content-type: application/json');
-    
-    $content = $vd->getContentFile();
-    require "$content";
-}*/
 ?>
 
 

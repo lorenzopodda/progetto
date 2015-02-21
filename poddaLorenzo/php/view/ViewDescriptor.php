@@ -16,33 +16,28 @@ class ViewDescriptor {
 
     /**
      * Titolo della finestra del browser
-     * @var string
      */
     private $titolo;
     
     /**
      * File che include la definizione HTML dei tab della pagina (parte dello header)
-     * @var string 
      */
     private $titolo_file;
 
 
     /**
      * File che include la definizione HTML dei tab della pagina (parte principale)
-     * @var string 
      */
  
     private $content_file;
 
     /**
-     * Messaggio di errore da mostrare dopo un input (nascosto se nullo)
-     * @var string 
+     * Messaggio di errore da mostrare dopo un input 
      */
     private $messaggioErrore;
 
     /**
-     * Messaggio di conferma da mostrare dopo un input (nascosto se nullo)
-     * @var string 
+     * Messaggio di conferma da mostrare dopo un input (
      */
     private $messaggioConferma;
     
@@ -51,7 +46,6 @@ class ViewDescriptor {
      * (le funzionalita' sono divise in due categorie: 
      * utente e venditore, corrispondenti alle sottocartelle 
      * di view nel progetto)
-     * @var string 
      */
     private $pagina;
     
@@ -61,17 +55,6 @@ class ViewDescriptor {
      
     private $impToken;
 
-    /**
-     * lista di script javascript da aggiungere alla pagina
-     * @var array
-     */
-    private $js;
-    
-    /**
-     * flag per dati json (non scrive html)
-     * @var boolean
-     */
-    private $json;
     
     /**
      * Costruttore
@@ -83,7 +66,6 @@ class ViewDescriptor {
 
     /**
      * Restituisce il titolo della scheda del browser
-     * @return string
      */
     public function getTitolo() {
         return $this->titolo;
@@ -91,7 +73,6 @@ class ViewDescriptor {
 
     /**
      * Imposta il titolo della scheda del browser
-     * @param string $titolo il titolo della scheda del browser
      */
     public function setTitolo($titolo) {
         $this->titolo = $titolo;
@@ -99,7 +80,6 @@ class ViewDescriptor {
 
     /**
      * Imposta il file che include la definizione HTML del titolo
-     * @return string
      */
     
     public function setTitoloFile($titoloFile) {
@@ -108,7 +88,6 @@ class ViewDescriptor {
 
     /**
      * Restituisce il path al file che contiene il titolo
-     * @return string
      */
     public function getTitoloFile() {
         return $this->titolo_file;
@@ -116,7 +95,6 @@ class ViewDescriptor {
 
  /**
      * Imposta il file che include la definizione HTML del contenuto principale
-     * @return string
      */
     public function setContentFile($contentFile) {
         $this->content_file = $contentFile;
@@ -124,7 +102,6 @@ class ViewDescriptor {
 
     /**
      * Restituisce il path al file che contiene il contenuto principale
-     * @return string
      */
     public function getContentFile() {
         return $this->content_file;
@@ -134,7 +111,6 @@ class ViewDescriptor {
     
     /**
      * Restituisce il testo del messaggio di errore
-     * @return string
      */
     public function getMessaggioErrore() {
         return $this->messaggioErrore;
@@ -142,7 +118,6 @@ class ViewDescriptor {
 
       /**
      * Imposta un messaggio di errore
-     * @return string
      */
     public function setMessaggioErrore($msg) {
         $this->messaggioErrore = $msg;
@@ -151,7 +126,6 @@ class ViewDescriptor {
 
     /**
      * Restituisce il contenuto del messaggio di conferma
-     * @return string
      */
     public function getMessaggioConferma() {
         return $this->messaggioConferma;
@@ -159,7 +133,6 @@ class ViewDescriptor {
 
     /**
      * Imposta il contenuto del messaggio di conferma
-     * @param string $msg
      */
     public function setMessaggioConferma($msg) {
         $this->messaggioConferma = $msg;
@@ -167,7 +140,6 @@ class ViewDescriptor {
 
     /**
      * Restituisce il nome della pagina corrente
-     * @return string
      */
     public function getPagina() {
         return $this->pagina;
@@ -175,7 +147,6 @@ class ViewDescriptor {
 
     /**
      * Imposta il nome della pagina corrente
-     * @param string $pagina
      */
     public function setPagina($pagina) {
         $this->pagina = $pagina;
@@ -189,36 +160,7 @@ class ViewDescriptor {
     public function setSottoPagina($sottoPagina) {
         $this->sottoPagina = $sottoPagina;
     }
-    /**
-     * Aggiunge uno script alla pagina
-     * @param String $nome
-     */
-    public function addScript($nome){
-        $this->js[] = $nome;
-    }
     
-    /**
-     * Restituisce la lista di script
-     * @return array
-     */
-    public function &getScripts(){
-        return $this->js;
-    }
-    
-    /**
-     * True se si devono scrivere dati json, false altrimenti
-     * @return Boolean
-     */
-    public function isJson(){
-        return $this->json;
-    }
-    
-    /**
-     * Da chiamare se la risposta contiene dati json
-     */
-    public function toggleJson(){
-        $this->json = true;
-    }
     
     
     

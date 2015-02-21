@@ -5,7 +5,7 @@ include_once 'controller/BaseController.php';
 include_once 'controller/utenteController.php';
 include_once 'controller/VenditoreController.php';
 
-date_default_timezone_set("Europe/Rome");
+
 // punto unico di accesso all'applicazione
 FrontController::dispatch($_REQUEST);
 
@@ -16,7 +16,6 @@ class FrontController {
 
     /**
      * Gestore delle richieste al punto unico di accesso all'applicazione
-     * @param array $request i parametri della richiesta
      */
     public static function dispatch(&$request) {
         // inizializziamo la sessione 
@@ -35,7 +34,7 @@ class FrontController {
                 case 'Utente':
                     // la pagina degli utenti e' accessibile solo agli utenti
                     
-                    // il controllo viene fatto dal controller apposito
+                    // il controllo viene fatto dal controller utente
                     $controller = new utenteController();
                     if (isset($_SESSION[BaseController::role]) &&
                         $_SESSION[BaseController::role] != User::Utente) {
@@ -48,7 +47,7 @@ class FrontController {
                 case 'Venditore':
                     // la pagina del venditore e' accessibile solo al venditore
                     
-                    // il controllo viene fatto dal controller apposito
+                    // il controllo viene fatto dal controller venditore
                     $controller = new VenditoreController();
                     if (isset($_SESSION[BaseController::role]) &&
                         $_SESSION[BaseController::role] != User::Venditore)  {

@@ -144,12 +144,9 @@ class Libro {
 
     /**
      * Verifica se due oggetti Libro sono logicamente uguali
-     * @param libro $other l'oggetto con cui confrontare $this
-     * @return boolean true se i due oggetti sono logicamente uguali, false 
-     * altrimenti
      */
     public function equals(Libro $other) {
-        return $other->id == $this->id;
+        return $other->idLibro == $this->idLibro;
     }
     
     

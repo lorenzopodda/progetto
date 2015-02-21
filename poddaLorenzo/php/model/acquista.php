@@ -3,14 +3,14 @@
 include_once 'utente.php';
 include_once 'libro.php';
 
-/**
- * Rappresenta un acquisto di un libro da parte di un utente
- */
+
+ //Rappresenta un acquisto di un libro da parte di un utente
+ 
 class Acquista {
 	
-	/**
-	*utente dell'acquisto
-	*/
+	
+	//utente dell'acquisto
+	
 	private $utente;
 
 	/**

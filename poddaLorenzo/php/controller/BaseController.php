@@ -4,28 +4,25 @@ include_once basename(__DIR__) . '/../view/ViewDescriptor.php';
 include_once basename(__DIR__) . '/../model/user.php';
 include_once basename(__DIR__) . '/../model/userFactory.php';
 
-/**
- * Controller che gestisce gli utenti non autenticati, 
- * fornendo le funzionalita' comuni anche agli altri controller
- *
- */
+
+ //Controller per gestisce gli utenti non autenticati. Fornisce anche le funzionalit' comuni agli altri controller.
+ 
 class BaseController {
 
     const user = 'user';
     const role = 'role';
     const impersonato = '_imp';
 
-    /**
-     * Costruttore
-     */
+    
+     //Costruttore
+     
     public function __construct() {
         
     }
 
-    /**
-     * Metodo per gestire l'input dell'utente. Le sottoclassi lo sovrascrivono
-     * @param type $request la richiesta da gestire
-     */
+    
+     //Metodo per gestire l'input dell'utente.
+     
     public function handleInput(&$request) {
         // creo il descrittore della vista
         $vd = new ViewDescriptor();
@@ -49,7 +46,6 @@ class BaseController {
                     $username = isset($request['user']) ? $request['user'] : '';
                     $password = isset($request['password']) ? $request['password'] : '';
                     $this->login($vd, $username, $password);
-                    // questa variabile viene poi utilizzata dalla vista
                     if ($this->loggedIn())
                         $user = userFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
                     break;
@@ -73,18 +69,15 @@ class BaseController {
         require basename(__DIR__) . '/../view/master.php';
     }
 
-    /**
-     * Verifica se l'utente sia correttamente autenticato
-     * @return boolean true se l'utente era gia' autenticato, false altrimenti
-     */
+   
+     //Verifica se l'utente sia correttamente autenticato
     protected function loggedIn() {
         return isset($_SESSION) && array_key_exists(self::user, $_SESSION);
     }
 
-    /**
-     * Imposta la vista master.php per visualizzare la pagina di login
-     * @param ViewDescriptor $vd il descrittore della vista
-     */
+    
+     //Imposta la vista master.php per visualizzare la pagina di login
+     
     protected function showLoginPage($vd) {
         // mostro la pagina di login
         $vd->setTitolo("Libreria-Login");
@@ -93,10 +86,9 @@ class BaseController {
     }
     
 
-    /**
-     * Imposta la vista master.php per visualizzare la pagina di gestione dell'utente
-     * @param ViewDescriptor $vd il descrittore della vista
-     */
+    
+     //Imposta la vista master.php per visualizzare la pagina di gestione dell'utente
+     
     protected function showHomeUtente($vd) {
         // mostro la home degli utenti
 
@@ -105,10 +97,7 @@ class BaseController {
         $vd->setContentFile(basename(__DIR__) . '/../view/utente/content.php');
     }
 
-    /**
-     * Imposta la vista master.php per visualizzare la pagina di gestione del venditore
-     * @param ViewDescriptor $vd il descrittore della vista
-     */
+     //Imposta la vista master.php per visualizzare la pagina di gestione del venditore
     protected function showHomeVenditore($vd) {
         // mostro la home del venditore
         $vd->setTitolo("Libreria-venditore");
@@ -117,10 +106,8 @@ class BaseController {
     }
 
 
-    /**
-     * Seleziona quale pagina mostrare in base al ruolo dell'utente corrente
-     * @param ViewDescriptor $vd il descrittore della vista
-     */
+    
+     //Seleziona quale pagina mostrare in base al ruolo dell'utente corrente
     protected function showHome($vd) {
         $user = userFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
         switch ($user->getRuolo()) {
@@ -134,12 +121,7 @@ class BaseController {
         }
     }
 
-    /**
-     * Imposta la variabile del descrittore della vista legato 
-     * all'utente da impersonare nel caso sia stato specificato nella richiesta
-     * @param ViewDescriptor $vd il descrittore della vista
-     * @param array $request la richiesta
-     */
+    
     protected function setImpToken(ViewDescriptor $vd, &$request) {
 
         if (array_key_exists('_imp', $request)) {
@@ -147,12 +129,8 @@ class BaseController {
         }
     }
 
-    /**
-     * Procedura di autenticazione 
-     * @param ViewDescriptor $vd descrittore della vista
-     * @param string $username lo username specificato
-     * @param string $password la password specificata
-     */
+   
+     //Procedura di autenticazione 
     protected function login($vd, $username, $password) {
         // carichiamo i dati dell'utente
 
@@ -168,16 +146,11 @@ class BaseController {
         }
     }
 
-    /**
-     * Procedura di logout dal sistema 
-     * @param type $vd il descrittore della pagina
-     */
+   
+     //Procedura di logout dal sistema 
     protected function logout($vd) {
-        // reset array $_SESSION
         $_SESSION = array();
-        // termino la validita' del cookie di sessione
         if (session_id() != '' || isset($_COOKIE[session_name()])) {
-            // imposto il termine di validita' al mese scorso
             setcookie(session_name(), '', time() - 2592000, '/');
         }
         // distruggo il file di sessione
@@ -186,8 +159,7 @@ class BaseController {
     }
  protected function creaFeedbackUtente(&$msg, $vd, $okMsg) {
         if (count($msg) > 0) {
-            // ci sono messaggi di errore nell'array,
-            // qualcosa e' andato storto...
+            // ci sono messaggi di errore 
             $error = "Si sono verificati i seguenti errori \n<ul>\n";
             foreach ($msg as $m) {
                 $error = $error . $m . "\n";
@@ -195,8 +167,7 @@ class BaseController {
             // imposto il messaggio di errore
             $vd->setMessaggioErrore($error);
         } else {
-            // non ci sono messaggi di errore, la procedura e' andata
-            // quindi a buon fine, mostro un messaggio di conferma
+            // non ci sono messaggi di errore
             $vd->setMessaggioConferma($okMsg);
         }
  }

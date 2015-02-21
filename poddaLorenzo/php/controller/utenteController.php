@@ -4,24 +4,22 @@ include_once 'BaseController.php';
 include_once basename(__DIR__) . '/../model/acquista.php';
 include_once basename(__DIR__) . '/../model/libroFactory.php';
 
-/**
- * Controller che gestisce la modifica dei dati dell'applicazione relativa agli utenti
-**/
+
+ // Controller che gestisce la modifica dei dati dell'applicazione relativa agli utenti
+
 class StudenteController extends BaseController {
 
     const acquista = 'acquista';
 
-    /**
-     * Costruttore
-     */
+   
+     //Costruttore
+     
     public function __construct() {
         parent::__construct();
     }
 
-    /**
-     * Metodo per gestire l'input dell'utente. 
-     * @param type $request la richiesta da gestire
-     */
+    
+     //Metodo per gestire l'input dell'utente.  
     public function handleInput(&$request) {
 
         // creo il descrittore della vista
@@ -31,7 +29,7 @@ class StudenteController extends BaseController {
         // imposto la pagina
         $vd->setPagina($request['page']);
 
-        // imposto il token per impersonare un utente (nel lo stia facendo)
+        // imposto il token per impersonare un utente 
         $this->setImpToken($vd, $request);
 
         // gestion dei comandi
@@ -48,7 +46,7 @@ class StudenteController extends BaseController {
                             $_SESSION[BaseController::user], $_SESSION[BaseController::role]);
 
 
-            // verifico quale sia la sottopagina della categoria utente
+            // verifico quale sia la pagina della categoria utente
            
             if (isset($request["subpage"])) {
                 switch ($request["subpage"]) {

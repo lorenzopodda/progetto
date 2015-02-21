@@ -10,10 +10,9 @@ class Db {
     }
     
     private static $singleton;
-    /**
-     *  Restituisce un singleton per la connessione al Db
-     * @return \Db
-     */
+   
+     //Restituisce un singleton per la connessione al Db
+     
     public static function getInstance(){
         if(!isset(self::$singleton)){
             self::$singleton = new Db();
@@ -22,11 +21,8 @@ class Db {
         return self::$singleton;
     }
     
-    /**
-     * Restituisce una connessione funzionante al db
-     * @return \mysqli una connessione funzionante al db dell'applicazione,
-     * null in caso di errore
-     */
+    
+    //Restituisce una connessione funzionante al db
     public function connectDb(){
         $mysqli = new mysqli();
         $mysqli->connect(Settings::$db_host, Settings::$db_user,

@@ -11,22 +11,24 @@
         <h2> Descrizione dell'applicazione </h2>
         <p>
             L’applicazione supporta la compravendita di libri. 
-            La funzionalità di base prevede che un venditore, dopo essersi autenticato nella piattaforma 
-	    possa inserire nuovi libri da mettere in vendita 
+            La funzionalità di base prevede che un venditore e un acquirente.
+            Il venditore,dopo essersi autenticato nella piattaforma, 
+	    può inserire nuovi libri da mettere in vendita e cancellare quelli che non intende più vendere, 
+            mentre l'acquirente, sempre dopo essersi autenticato, può acquistare i libri. 
             I dati che figurano per ogni libro sono i seguenti:
         </p>
         <ul>
-	    <li>Codice, titolo e anno di uscita del libro </li>
-            <li>Codice, nome, cognome dell'autore</li>
-            <li>numero di copie disponibili alla vendita</li>
-            <li>prezzo e piccola trama del libro</li>
-            <li>Codice e genere del libro</li>
+	    <li>Codice</li>
+            <li>Titolo</li>
+            <li>Prezzo</li>
+            <li>NomeAutore</li>
+            <li>CognomeAutore</li>
+            <li>Genere</li>
         </ul>
 
 
         <p>l'utente &egrave; in grado di visualizzare 
             tutti i libri acquistabili, dopo aver effettuato l'accesso, e poter procedere all'acquisto.
-	   In caso non sia registrato può compilare l'apposito form per la registrazione.
             Un acquisto &egrave; associato ad un acquirente nel seguente modo:
         </p>
         <ul>
@@ -35,37 +37,30 @@
             <li>Il Codice del libro</li>
         </ul>
 
-	<p>Una libro messo in vendita &egrave; associata al suo venditore nel seguente modo:</p>
-	<ul>
-            
-            <li>Il Codice del venditore</li>
-            <li>Il Codice del libro</li>
-        </ul>
-
         <p>I dati relativi ai venditori e agli acquirenti sono:</p>
 
 	<p>Venditori</p>
         <ul>
-            <li>Codice (da utilizzare anche come user), Pw, Nome e Cognome</li>
-            <li>Indirizzo</li>
+            <li>Codice</li>
+            <li>Username</li>
+            <li>Password</li>
+            <li>Nome</li>
+            <li>Cognome</li>
             <li>Email</li>
         </ul>
 	<p>Acquirenti</p>
 	<ul>
-            <li>Codice, user, Pw, Nome e Cognome</li>
+            <li>Codice</li>
+            <li>Username</li>
+            <li>Password</li>
+            <li>Nome</li>
+            <li>Cognome</li>
             <li>Indirizzo</li>
             <li>Email</li>
 	    <li>Credito</li>
         </ul>
 
-        <p>
-            L'applicazione permette inoltre all'acquirente di effettuare tre tipi di ricerca dei libri:
-	</p>
-	<ul>
-            <li>Per autore</li>
-            <li>Per genere</li>
-            <li>Una ricerca avanzata (autore, genere, anno di uscita)</li>
-        </ul>
+        
         
     </ul>
 

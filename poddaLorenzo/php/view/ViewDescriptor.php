@@ -54,6 +54,12 @@ class ViewDescriptor {
     
      
     private $impToken;
+    
+    /**
+     * lista di script javascript da aggiungere alla pagina
+     * @var array
+     */
+    private $js;
 
     
     /**
@@ -61,7 +67,7 @@ class ViewDescriptor {
      */
     public function __construct() {
         $this->js = array();
-        $this->json = false;
+        
     }
 
     /**
@@ -160,6 +166,22 @@ class ViewDescriptor {
     public function setSottoPagina($sottoPagina) {
         $this->sottoPagina = $sottoPagina;
     }
+    /**
+     * Aggiunge uno script alla pagina
+     * @param String $nome
+     */
+    public function addScript($nome){
+        $this->js[] = $nome;
+    }
+    
+    /**
+     * Restituisce la lista di script
+     * @return array
+     */
+    public function &getScripts(){
+        return $this->js;
+    }
+    
     
     
     

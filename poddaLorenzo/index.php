@@ -13,8 +13,7 @@
             L’applicazione supporta la compravendita di libri. 
             La funzionalità di base prevede che un venditore e un acquirente.
             Il venditore,dopo essersi autenticato nella piattaforma, 
-	    può inserire nuovi libri da mettere in vendita e cancellare quelli che non intende più vendere, 
-            mentre l'acquirente, sempre dopo essersi autenticato, può acquistare i libri. 
+	    può inserire nuovi libri da mettere in vendita e cancellare quelli che non intende più vendere. 
             I dati che figurano per ogni libro sono i seguenti:
         </p>
         <ul>

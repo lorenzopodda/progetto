@@ -117,7 +117,7 @@ class userFactory {
     /**
      * Cerca un utente  per id
      */
-    public function cercaUtentePerId($id, $role) {
+    public function cercaUtentePerId($username, $password, $role) {
         $intval = filter_var($id, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
         if (!isset($intval)) {
             return null;

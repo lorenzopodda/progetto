@@ -36,7 +36,7 @@ class Utente extends User {
     /**
      * Imposta un nuovo credito per l'utente
      */
-    public function setCredito( $credito) {
+    public function setCredito($credito) {
         $this->credito = $credito;
 	}
         

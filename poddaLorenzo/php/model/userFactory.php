@@ -118,8 +118,8 @@ class userFactory {
      * Cerca un utente  per id
      */
     public function cercaUtentePerId($id, $role) {
-        $intval = filter_var($id, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
-        if (!isset($intval)) {
+        $intVal = filter_var($id, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
+        if (!isset($intVal)) {
             return null;
         }
         $mysqli = Db::getInstance()->connectDb();
@@ -149,7 +149,7 @@ class userFactory {
                     return null;
                 }
 
-                if (!$stmt->bind_param('i', $intval)) {
+                if (!$stmt->bind_param('i', $intVal)) {
                     error_log("[cercaUtentePerId] impossibile" .
                             " effettuare il binding in input");
                     $mysqli->close();
@@ -177,7 +177,7 @@ class userFactory {
                     return null;
                 }
 
-                if (!$stmt->bind_param('i', $intval)) {
+                if (!$stmt->bind_param('i', $intVal)) {
                     error_log("[loadUser] impossibile" .
                             " effettuare il binding in input");
                     $mysqli->close();

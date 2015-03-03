@@ -242,7 +242,7 @@ class userFactory {
         $row = array();
         $bind = $stmt->bind_result(
                 $row['venditore_id'], 
-                $row['venditore_usename'], 
+                $row['venditore_username'], 
                 $row['venditore_password'], 
                 $row['venditore_nome'], 
                 $row['venditore_cognome'],

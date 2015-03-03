@@ -44,8 +44,8 @@ class BaseController {
             switch ($request["cmd"]) {
                 case 'login':
                     $username = isset($request['user']) ? $request['user'] : '';
-                    $password = isset($request['password']) ? $request['password'] : '';
-                    $this->login($vd, $username, $password);
+                    $password_ = isset($request['password_']) ? $request['password_'] : '';
+                    $this->login($vd, $username, $password_);
                     if ($this->loggedIn())
                         $user = userFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
                     break;
@@ -131,10 +131,10 @@ class BaseController {
 
    
      //Procedura di autenticazione 
-    protected function login($vd, $username, $password) {
+    protected function login($vd, $username, $password_) {
         // carichiamo i dati dell'utente
 
-        $user = userFactory::instance()->caricaUtente($username, $password);
+        $user = userFactory::instance()->caricaUtente($username, $password_);
         if (isset($user) && $user->esiste()) {
             // utente autenticato
             $_SESSION[self::user] = $user->getId();

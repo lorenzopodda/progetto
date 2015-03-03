@@ -23,8 +23,8 @@ switch ($vd->getContentFile()) {
         <ul class="panel">
             
             <li><a href="venditore/venditore<?= $vd->scriviToken('?')?>" id="home-venditore">home_venditore</a></li>
-            <li><a href="docente/inserisci<?= $vd->scriviToken('?')?>" id="Inserisci">Inserisci</a></li>
-            <li><a href="docente/cancella<?= $vd->scriviToken('?')?>" id="Cancella">Cancella</a></li>
+            <li><a href="venditore/inserisci<?= $vd->scriviToken('?')?>" id="Inserisci">Inserisci</a></li>
+            <li><a href="venditore/cancella<?= $vd->scriviToken('?')?>" id="Cancella">Cancella</a></li>
         </ul>
         <?php
         break;

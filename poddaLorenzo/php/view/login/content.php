@@ -10,7 +10,7 @@
 			<input type="text" name="username" id="username" value=""/>
 			<br />
 			<label for="pswd">Password</label>
-			<input type="password" name="password"id="password" value="" />
+			<input type="password" name="password" id="password" value="" />
 			<br />
                         <input type="submit" value="Login"/>
 			

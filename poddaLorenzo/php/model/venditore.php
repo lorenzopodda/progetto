@@ -5,7 +5,7 @@ include_once 'user.php';
  * Classe che rappresenta un Venditore
  */
 
-class Docente extends User {
+class Venditore extends User {
     
     
 

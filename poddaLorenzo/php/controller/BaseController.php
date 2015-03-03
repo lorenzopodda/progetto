@@ -43,7 +43,7 @@ class BaseController {
             // abbiamo ricevuto un comando
             switch ($request["cmd"]) {
                 case 'login':
-                    $username = isset($request['user']) ? $request['user'] : '';
+                    $username = isset($request['username']) ? $request['username'] : '';
                     $password = isset($request['password']) ? $request['password'] : '';
                     $this->login($vd, $username, $password);
                     if ($this->loggedIn())

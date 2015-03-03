@@ -281,8 +281,8 @@ class userFactory {
                 $row['utente_nome'], 
                 $row['utente_cognome'], 
                 $row['utente_indirizzo'], 
-                $row['studenti_email'], 
-                $row['studenti_credito']);
+                $row['utente_email'], 
+                $row['utente_credito']);
         if (!$bind) {
             error_log("[caricaUtenteDaStmt] impossibile" .
                     " effettuare il binding in output");

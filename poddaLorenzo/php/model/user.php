@@ -29,7 +29,7 @@ class User {
     
     //Password per l'autenticazione
     
-    private $password_;
+    private $password;
     
     /*
      * Il ruolo dell'utente nell'applicazione.
@@ -95,14 +95,14 @@ class User {
      * Restituisce la password per l'utente corrente
      */
     public function getPassword() {
-        return $this->password_;
+        return $this->password;
     }
 
     /**
      * Imposta la password per l'utente corrente
      */
-    public function setPassword($password_) {
-        $this->password_ = $password_;
+    public function setPassword($password) {
+        $this->password = $password;
         return true;
     }
 

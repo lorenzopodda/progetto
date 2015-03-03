@@ -29,7 +29,7 @@ class userFactory {
 /**
      * Carica un utente tramite username e password
      */
-    public function caricaUtente($username, $password_) {
+    public function caricaUtente($username, $password) {
 
 
         $mysqli = Db::getInstance()->connectDb();
@@ -62,7 +62,7 @@ class userFactory {
             return null;
         }
 
-       if (!$stmt->bind_param('ss',$username, $password_)) {
+       if (!$stmt->bind_param('ss',$username, $password)) {
             error_log("[loadUser] impossibile effettuare il binding in input");
             $mysqli->close();
             return null;
@@ -97,7 +97,7 @@ class userFactory {
             return null;
         }
 
-        if (!$stmt->bind_param('ss', $username, $password_)) {
+        if (!$stmt->bind_param('ss', $username, $password)) {
             error_log("[loadUser] impossibile" .
                     " effettuare il binding in input");
             $mysqli->close();

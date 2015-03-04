@@ -14,8 +14,8 @@ switch ($vd->getSottoPagina()) {
         <p>
             Scegli una fra le seguenti sezioni:
         </p>
-        <ul class="panel">
-            <li><a href="utente/acquisti<?= $vd->scriviToken('?')?>" id="pnl-acquista">
+        <ul class="panel">  Ciao
+            <li><a href="utente/acquisti" id="pnl-acquista">
                     Acquista
                 </a>
             </li>

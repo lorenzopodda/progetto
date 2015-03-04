@@ -15,7 +15,7 @@ switch ($vd->getContentFile()) {
             Scegli una fra le seguenti sezioni:
         </p>
         <ul class="panel">
-            <li><a href="utente/acquisti" id="pnl-acquista">
+            <li><a href="utente/acquisti.php" id="pnl-acquista">
                     Acquista
                 </a>
             </li>

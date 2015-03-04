@@ -7,15 +7,15 @@ switch ($vd->getSottoPagina()) {
    <?php default: ?>
         
         
-        <h2 class="icon-title" id="h-home">Pannello di Controllo</h2>
+        <h2>Pannello di Controllo</h2>
         <p>
             Benvenuto, <?= $user->getNome() ?>
         </p>
         <p>
             Scegli una fra le seguenti sezioni:
         </p>
-        <ul class="panel">  
-            <li><a href="utente/acquisti" id="pnl-acquista">
+        <ul>  
+            <li><a href="Utente/acquisti<?= $vd->scriviToken('?')?>">
                     Acquista
                 </a>
             </li>

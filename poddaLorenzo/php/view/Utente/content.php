@@ -14,7 +14,7 @@ switch ($vd->getSottoPagina()) {
         <p>
             Scegli una fra le seguenti sezioni:
         </p>
-        <ul class="panel">  Ciao
+        <ul class="panel">  
             <li><a href="utente/acquisti" id="pnl-acquista">
                     Acquista
                 </a>

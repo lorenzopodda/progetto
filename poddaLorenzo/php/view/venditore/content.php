@@ -1,5 +1,5 @@
 <?php
-switch ($vd->getSottoPagina()) {
+switch ($vd->getContentPage()) {
     case 'venditore':
         include 'venditore.php';
         break;

@@ -7,7 +7,7 @@ include_once basename(__DIR__) . '/../model/libroFactory.php';
 
  // Controller che gestisce la modifica dei dati dell'applicazione relativa agli utenti
 
-class StudenteController extends BaseController {
+class utenteController extends BaseController {
 
     const acquista = 'acquista';
 

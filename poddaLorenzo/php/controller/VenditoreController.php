@@ -66,7 +66,6 @@ class VenditoreController extends BaseController {
             }
         }
         
-
             // gestione dei comandi inviati dal venditore
             if (isset($request["cmd"])) {
 

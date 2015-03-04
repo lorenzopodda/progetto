@@ -18,11 +18,11 @@ switch ($vd->getContentFile()) {
             Benvenuto, <?= $user->getNome() ?>
         </p>
         <p>
-            Scegli una fra le seguenti sezioni
+            Scegli una fra le seguenti sezioni:
         </p>
         <ul>
             
-            <li><a href="venditore/venditore.php<?= $vd->scriviToken('?')?>">home_venditore</a></li>
+            <li><a href="venditore/venditore.php">home_venditore</a></li>
             <li><a href="venditore/inserisci.php<?= $vd->scriviToken('?')?>">Inserisci</a></li>
             <li><a href="venditore/cancella.php<?= $vd->scriviToken('?')?>">Cancella</a></li>
         </ul>

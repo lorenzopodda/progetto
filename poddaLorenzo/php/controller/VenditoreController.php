@@ -38,7 +38,7 @@ class VenditoreController extends BaseController {
                     $_SESSION[BaseController::user], $_SESSION[BaseController::role]);
 
             // verifico quale sia la pagina della categoria venditore
-           
+           if (isset($request["subpage"])) {
                 switch ($request["subpage"]) {
 
                     // pagina iniziale sezione venditore
@@ -64,6 +64,7 @@ class VenditoreController extends BaseController {
                         break;
                 }
             }
+        }
         
 
             // gestione dei comandi inviati dal venditore
@@ -84,6 +85,7 @@ class VenditoreController extends BaseController {
                                 $_SESSION[BaseController::user], $_SESSION[BaseController::role]);
                 $this->showHome($vd);
             }
+            require basename(__DIR__) . '/../view/master.php';
 }
      
 

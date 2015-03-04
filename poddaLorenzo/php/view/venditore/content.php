@@ -1,5 +1,5 @@
 <?php
-switch ($vd->getContentFile()) {
+switch ($vd->getSottoPagina()) {
     case 'venditore':
         include 'venditore.php';
         break;
@@ -13,18 +13,18 @@ switch ($vd->getContentFile()) {
         break;
     ?>
     <?php default: ?>
-         <h2 class="icon-title" id="h-home">Pannello di Controllo</h2>
+         <h2>Pannello di Controllo</h2>
         <p>
             Benvenuto, <?= $user->getNome() ?>
         </p>
         <p>
             Scegli una fra le seguenti sezioni:
         </p>
-        <ul class="panel">
+        <ul>
             
-            <li><a href="venditore/venditore<?= $vd->scriviToken('?')?>" id="home-venditore">home_venditore</a></li>
-            <li><a href="venditore/inserisci<?= $vd->scriviToken('?')?>" id="Inserisci">Inserisci</a></li>
-            <li><a href="venditore/cancella<?= $vd->scriviToken('?')?>" id="Cancella">Cancella</a></li>
+            <li><a href="venditore/venditore<?= $vd->scriviToken('?')?>">home_venditore</a></li>
+            <li><a href="venditore/inserisci<?= $vd->scriviToken('?')?>">Inserisci</a></li>
+            <li><a href="venditore/cancella<?= $vd->scriviToken('?')?>">Cancella</a></li>
         </ul>
         <?php
         break;

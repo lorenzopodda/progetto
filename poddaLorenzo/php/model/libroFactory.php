@@ -129,9 +129,9 @@ class LibroFactory {
         
         }
         //cancella libro
-        public function cancellalibro(Studente $s, Appello $a){
+        public function cancellalibro($idLibro){
         $query = "delete from libro where titolo = ? ";
-        return $this->queryIscrizione($s, $a, $query);
+        return $this->queryIscrizione($idLibro, $query);
     }
 	
 

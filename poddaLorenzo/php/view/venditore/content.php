@@ -23,7 +23,7 @@ switch ($vd->getSottoPagina()) {
         <ul>
             
             <li><a href="venditore?venditore">home_venditore</a></li>
-            <li><a href="venditore??inserisci.php">Inserisci</a></li>
+            <li><a href="venditore?inserisci.php">Inserisci</a></li>
             <li><a href="venditore/cancella">Cancella</a></li>
         </ul>
         <?php

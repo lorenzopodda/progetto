@@ -18,12 +18,12 @@ switch ($vd->getSottoPagina()) {
             Benvenuto, <?= $user->getNome() ?>
         </p>
         <p>
-            Scegli una fra le seguenti sezioni:::
+            Scegli una fra le seguenti sezioni:
         </p>
         <ul>
             
-            <li><a href="venditore/venditore<?= $vd->scriviToken('?')?>">home_venditore</a></li>
-            <li><a href="venditore/inserisci">Inserisci</a></li>
+            <li><a href="venditore/venditore.php">home_venditore</a></li>
+            <li><a href="venditore/inserisci.php">Inserisci</a></li>
             <li><a href="venditore/cancella">Cancella</a></li>
         </ul>
         <?php

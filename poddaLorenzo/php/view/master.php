@@ -20,8 +20,8 @@ include_once basename(__DIR__) . '/../Settings.php';
             <meta http-equiv="content-type" content="text/html; charset=utf-8" />
             <title><?= $vd->getTitolo() ?></title>
            <base href="<?= Settings::getApplicationPath() ?>php/"/>
-            <meta name="keywords" content="AMM esami docente" />
-            <meta name="description" content="Una pagina per gestire le funzioni dei docenti" />
+            
+            <meta name="description" content="Una pagina per l'acquisto di libri" />
             <link href="../css/stile.css" rel="stylesheet" type="text/css" media="screen" />
             
             <?php

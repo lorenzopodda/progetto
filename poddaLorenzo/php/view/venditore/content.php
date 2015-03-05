@@ -18,7 +18,7 @@ switch ($vd->getSottoPagina()) {
             Benvenuto, <?= $user->getNome() ?>
         </p>
         <p>
-            Scegli una fra le seguenti sezioni:
+            Scegli una fra le seguenti sezioni:::
         </p>
         <ul>
             

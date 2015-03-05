@@ -1,7 +1,7 @@
 <div id="sezioni">
-	<li class=" <?= strpos($vd->getPagina(),'venditore') !== false || $vd->getContentFile() == null ? 'current_page_item' : ''?>"><a href="../php/view/venditore/venditore.php">Venditore</a></li>
+	<li class=" <?= strpos($vd->getPagina(),'venditore') !== false || $vd->getContentFile() == null ? 'current_page_item' : ''?>"><a href="../php/view/Venditore/venditore.php">Venditore</a></li>
 	<li><a href="#">Inserisci</a></li>
-	<li class=" <?= strpos($vd->getPagina(),'cancella') !== false || $vd->getContentFile() == null ? 'current_page_item' : ''?>"> <a href="../php/view/venditore/cancella.php">Cancella</a></li>
+	<li class=" <?= strpos($vd->getPagina(),'cancella') !== false || $vd->getContentFile() == null ? 'current_page_item' : ''?>"> <a href="../php/view/Venditore/cancella.php">Cancella</a></li>
 	
 </div>
 <div id="sezione">

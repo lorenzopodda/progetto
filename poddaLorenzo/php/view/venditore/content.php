@@ -22,7 +22,7 @@ switch ($vd->getSottoPagina()) {
         </p>
         <ul>
             
-            <li><a href="venditore/venditore">home_venditore</a></li>
+            <li><a href="venditore/venditore<?= $vd->scriviToken('?')?>">home_venditore</a></li>
             <li><a href="venditore/inserisci">Inserisci</a></li>
             <li><a href="venditore/cancella">Cancella</a></li>
         </ul>

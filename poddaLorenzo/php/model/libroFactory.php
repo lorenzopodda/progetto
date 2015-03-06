@@ -131,7 +131,13 @@ class LibroFactory {
         //cancella libro
         public function cancellalibro($idLibro){
         $query = "delete from libro where titolo = ? ";
-        return $this->queryIscrizione($idLibro, $query);
+         $stmt->prepare($query);
+        if (!$stmt) {
+            error_log("[inserisciLibro] impossibile" .
+                    " inizializzare il prepared statement n 1");
+            $mysqli->close();
+            return false;
+        }
     }
 	
 

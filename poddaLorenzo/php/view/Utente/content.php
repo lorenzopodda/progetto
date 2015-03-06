@@ -15,7 +15,7 @@ switch ($vd->getContentFile()) {
             Scegli una fra le seguenti sezioni:
         </p>
         <ul>  
-            <li><a href="Utente/acquisti">
+            <li><a href="Utente/acquisti<?= '?'.$vd->scriviToken()?>">
                     Acquista
                 </a>
             </li>

@@ -129,7 +129,7 @@ class LibroFactory {
         
         }
         //cancella libro
-        public function cancellalibro($idLibro){
+        public function cancellalibro($titoloLibro){
         $query = "delete from libro where titolo = ? ";
          $stmt->prepare($query);
         if (!$stmt) {
